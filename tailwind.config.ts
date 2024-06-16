@@ -30,6 +30,10 @@ const config = {
         secondary: "var(--gray-2)",
         tertiary: "var(--gray-3)",
       },
+      borderColor: {
+        primary: "var(--gray-6)",
+        secondary: "var(--gray-3)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -71,13 +75,21 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        shimmer: {
+          "0%, 90%, 100%": {
+            "background-position": "calc(-100% - var(--shimmer-width)) 0",
+          },
+          "30%, 60%": {
+            "background-position": "calc(100% + var(--shimmer-width)) 0",
+          },
+        },
         in: {
-          "0%": { transform: "translateY(18px)", opacity: 0 },
-          "100%": { transform: "translateY(0)", opacity: 1 },
+          "0%": { transform: "translateY(18px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
         },
         "in-reverse": {
-          "0%": { transform: "translateY(-18px)", opacity: 0 },
-          "100%": { transform: "translateY(0px)", opacity: 1 },
+          "0%": { transform: "translateY(-18px)", opacity: "0" },
+          "100%": { transform: "translateY(0px)", opacity: "1" },
         },
         "accordion-down": {
           from: { height: "0" },
@@ -89,14 +101,15 @@ const config = {
         },
       },
       animation: {
-        in: "in .6s both",
-        "in-reverse": "in-reverse .6s both",
+        in: "in 0.5s ease-out",
+        "in-reverse": "in-reverse 0.5s ease-out",
+        shimmer: "shimmer 8s infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
 
 export default config;

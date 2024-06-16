@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { Button } from "./ui/button";
 import NavLinks from "./ui/NavLinks";
 import { CSSProperties } from "react";
 import { usePathname } from "next/navigation";
@@ -28,7 +27,7 @@ export default function Navigation() {
         className="mx-auto flex max-w-[60rem] items-center justify-between gap-3 px-4 py-3 md:px-6 animate-in-reverse"
         style={{ "--index": 0 } as CSSProperties}
       >
-        <Link href="/" className="font-light capitalize text-lg">
+        <Link href="/" className="font-light uppercase text-xl">
           CombUI
         </Link>
         <ul className="hidden md:flex gap-1 items-center">
@@ -42,12 +41,9 @@ export default function Navigation() {
         <div className="relative md:hidden">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button
-                size="icon"
-                className="flex h-8 w-8 items-center justify-center rounded-lg focus:outline-none after:focus:outline-none"
-              >
+              <button className="flex h-8 w-8 items-center bg-tertiary justify-center rounded-lg focus:outline-none after:focus:outline-none">
                 <HiMenuAlt3 className="h-6 w-6 cursor-pointer text-black" />
-              </Button>
+              </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-40 origin-top-right mr-4 rounded-xl bg-contrast p-2 text-base shadow-md focus:outline-none sm:text-sm">
               <div className="grid">
@@ -56,9 +52,7 @@ export default function Navigation() {
                     <Link
                       href={link.href}
                       className={`rounded-md px-4 py-2 transition-colors hover:text-primary ${
-                        pathname === link.href
-                          ? "bg-secondary font-medium"
-                          : "font-normal"
+                        pathname === link.href ? "bg-secondary" : "font-normal"
                       }`}
                     >
                       {link.label}
