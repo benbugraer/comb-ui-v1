@@ -9,20 +9,24 @@ import DotPattern from "@/components/ui/dot-pattern";
 import Button from "@/components/Button";
 import { GrInstall } from "react-icons/gr";
 import { IoDocuments } from "react-icons/io5";
+import { Dock, DockIcon } from "@/components/ui/dock";
+import { TbBrandFramerMotion } from "react-icons/tb";
+import { SiShadcnui, SiRadixui, SiNextui } from "react-icons/si";
+import { FaWandMagicSparkles } from "react-icons/fa6";
 
 export default function Home() {
   return (
     <>
-      <div className="mx-auto max-w-4xl py-28 sm:py-36">
+      <div className="mx-auto relative max-w-4xl py-28 sm:py-36">
         <div className="text-center">
           <div className="z-10 flex mb-8 items-center justify-center">
-            {/* <Particles
-              className="absolute inset-0"
+            <Particles
+              className="absolute inset-0 z-0 pointer-events-none"
               quantity={100}
               ease={80}
               color="#000000"
               refresh
-            /> */}
+            />
             {/* <DotPattern
               className={cn(
                 "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
@@ -76,6 +80,27 @@ export default function Home() {
               <IoDocuments className="w-5 h-5" />
               Get Started
             </Button>
+          </div>
+          <div className="mt-6 flex items-center justify-center">
+            <Dock>
+              <DockIcon>
+                <Link href="https://www.framer.com/motion/" target="blank">
+                  <TbBrandFramerMotion className="w-6 h-6" />
+                </Link>
+              </DockIcon>
+              <DockIcon>
+                <SiShadcnui className="w-6 h-6" />
+              </DockIcon>
+              <DockIcon>
+                <SiRadixui className="w-6 h-6" />
+              </DockIcon>
+              <DockIcon>
+                <SiNextui className="w-6 h-6" />
+              </DockIcon>
+              <DockIcon>
+                <FaWandMagicSparkles className="w-6 h-6" />
+              </DockIcon>
+            </Dock>
           </div>
         </div>
       </div>
