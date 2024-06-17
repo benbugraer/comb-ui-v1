@@ -15,23 +15,26 @@ import { SiShadcnui, SiRadixui, SiNextui } from "react-icons/si";
 import { FaWandMagicSparkles } from "react-icons/fa6";
 
 export default function Home() {
+  const dockIcons = [
+    { href: "https://www.framer.com/motion/", icon: TbBrandFramerMotion },
+    { href: "https://www.framer.com/motion/", icon: FaWandMagicSparkles },
+    { href: "https://www.framer.com/motion/", icon: SiShadcnui },
+    { href: "https://www.framer.com/motion/", icon: SiRadixui },
+    { href: "https://www.framer.com/motion/", icon: SiNextui },
+  ];
+
   return (
     <>
-      <div className="mx-auto relative max-w-4xl py-28 sm:py-36">
+      <div className="mx-auto relative max-w-4xl py-28 sm:py-36 sm:w-1/2 lg:w-3/5 flex-col">
         <div className="text-center">
           <div className="z-10 flex mb-8 items-center justify-center">
             <Particles
-              className="absolute inset-0 z-0 pointer-events-none"
+              className="absolute inset-0 z-0 pointer-events-none w-full h-full"
               quantity={100}
               ease={80}
               color="#000000"
               refresh
             />
-            {/* <DotPattern
-              className={cn(
-                "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
-              )}
-            /> */}
             <div
               className="animate-in"
               style={{ "--index": 1 } as CSSProperties}
@@ -67,11 +70,14 @@ export default function Home() {
             className="mt-6 text-lg leading-8 text-tertiary animate-in"
             style={{ "--index": 3 } as CSSProperties}
           >
-            Go to the Variants page, find the features you want, download the
+            Go to the Variants page, find the features you want, install the
             necessary UI libraries and you&apos;re ready, just copy and paste
             them into your project. Remember you can customize it as you like.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
+          <div
+            className="mt-10 flex items-center justify-center gap-x-6 animate-in"
+            style={{ "--index": 4 } as CSSProperties}
+          >
             <Button href="/variants">
               <GrInstall className="w-5 h-5" />
               Installations
@@ -81,25 +87,22 @@ export default function Home() {
               Get Started
             </Button>
           </div>
-          <div className="mt-6 flex items-center justify-center">
+          <div
+            className="mt-10 flex-row items-center justify-center animate-in"
+            style={{ "--index": 5 } as CSSProperties}
+          >
             <Dock>
-              <DockIcon>
-                <Link href="https://www.framer.com/motion/" target="blank">
-                  <TbBrandFramerMotion className="w-6 h-6" />
-                </Link>
-              </DockIcon>
-              <DockIcon>
-                <SiShadcnui className="w-6 h-6" />
-              </DockIcon>
-              <DockIcon>
-                <SiRadixui className="w-6 h-6" />
-              </DockIcon>
-              <DockIcon>
-                <SiNextui className="w-6 h-6" />
-              </DockIcon>
-              <DockIcon>
-                <FaWandMagicSparkles className="w-6 h-6" />
-              </DockIcon>
+              {dockIcons.map(({ href, icon: Icon }, index) => (
+                <DockIcon key={index}>
+                  {href ? (
+                    <Link href={href} target="blank">
+                      <Icon className="w-6 h-6" />
+                    </Link>
+                  ) : (
+                    <Icon className="w-6 h-6" />
+                  )}
+                </DockIcon>
+              ))}
             </Dock>
           </div>
         </div>

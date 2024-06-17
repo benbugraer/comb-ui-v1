@@ -84,12 +84,12 @@ const config = {
           },
         },
         in: {
-          "0%": { transform: "translateY(18px)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
+          "0%": { transform: "translateY(18px)", opacity: 0 },
+          "100%": { transform: "translateY(0)", opacity: 1 },
         },
         "in-reverse": {
-          "0%": { transform: "translateY(-18px)", opacity: "0" },
-          "100%": { transform: "translateY(0px)", opacity: "1" },
+          "0%": { transform: "translateY(-18px)", opacity: 0 },
+          "100%": { transform: "translateY(0px)", opacity: 1 },
         },
         "accordion-down": {
           from: { height: "0" },
@@ -101,8 +101,8 @@ const config = {
         },
       },
       animation: {
-        in: "in 0.5s ease-out",
-        "in-reverse": "in-reverse 0.5s ease-out",
+        in: "in .6s both",
+        "in-reverse": "in-reverse .6s both",
         shimmer: "shimmer 8s infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
