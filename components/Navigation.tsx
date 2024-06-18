@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import NavLinks from "./ui/NavLinks";
+import NavLinks from "./NavLinks";
 import { CSSProperties } from "react";
 import { usePathname } from "next/navigation";
 import {
@@ -41,18 +41,18 @@ export default function Navigation() {
         <div className="relative md:hidden">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="flex h-8 w-8 items-center bg-tertiary justify-center rounded-lg focus:outline-none after:focus:outline-none">
+              <button className="flex h-8 w-8 items-center bg-secondary justify-center rounded-lg focus:outline-none after:focus:outline-none">
                 <HiMenuAlt3 className="h-6 w-6 cursor-pointer text-black" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-40 origin-top-right mr-4 rounded-xl bg-contrast p-2 text-base shadow-md focus:outline-none sm:text-sm">
+            <DropdownMenuContent className="w-40 origin-top-right mr-4 rounded-xl bg-secondary p-2 text-base shadow-md focus:outline-none sm:text-sm">
               <div className="grid">
                 {links.map((link) => (
                   <DropdownMenuRadioGroup asChild key={link.href}>
                     <Link
                       href={link.href}
                       className={`rounded-md px-4 py-2 transition-colors hover:text-primary ${
-                        pathname === link.href ? "bg-secondary" : "font-normal"
+                        pathname === link.href ? "bg-tertiary" : "font-normal"
                       }`}
                     >
                       {link.label}

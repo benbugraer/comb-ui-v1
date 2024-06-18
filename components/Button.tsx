@@ -12,7 +12,7 @@ type ButtonProps = {
 export default function Button({ children, href }: ButtonProps) {
   return (
     <motion.button
-      className="bg-black rounded-lg duration-[350ms] ease-linear transition-colors hover:bg-tertiary  hover:transition-colors hover:duration-[350ms] hover:ease-linear"
+      className="bg-black rounded-xl duration-[350ms] ease-linear transition-colors hover:bg-tertiary  hover:transition-colors hover:duration-[350ms] hover:ease-linear"
       whileHover={{ scale: 1.1 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >

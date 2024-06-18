@@ -13,14 +13,16 @@ import { Dock, DockIcon } from "@/components/ui/dock";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { SiShadcnui, SiRadixui, SiNextui } from "react-icons/si";
 import { FaWandMagicSparkles } from "react-icons/fa6";
+import GridPattern from "@/components/ui/grid-pattern";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 export default function Home() {
   const dockIcons = [
     { href: "https://www.framer.com/motion/", icon: TbBrandFramerMotion },
-    { href: "https://www.framer.com/motion/", icon: FaWandMagicSparkles },
-    { href: "https://www.framer.com/motion/", icon: SiShadcnui },
-    { href: "https://www.framer.com/motion/", icon: SiRadixui },
-    { href: "https://www.framer.com/motion/", icon: SiNextui },
+    { href: "https://magicui.design/", icon: FaWandMagicSparkles },
+    { href: "https://ui.shadcn.com/", icon: SiShadcnui },
+    { href: "https://www.radix-ui.com/", icon: SiRadixui },
+    { href: "https://nextui.org/", icon: SiNextui },
   ];
 
   return (
@@ -28,12 +30,15 @@ export default function Home() {
       <div className="mx-auto relative max-w-4xl py-28 sm:py-36 sm:w-1/2 lg:w-3/5 flex-col">
         <div className="text-center">
           <div className="z-10 flex mb-8 items-center justify-center">
-            <Particles
-              className="absolute inset-0 z-0 pointer-events-none w-full h-full"
-              quantity={100}
-              ease={80}
-              color="#000000"
-              refresh
+            <GridPattern
+              width={45}
+              height={45}
+              x={-1}
+              y={-1}
+              strokeDasharray={"4 2"}
+              className={cn(
+                "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]"
+              )}
             />
             <div
               className="animate-in"
@@ -78,7 +83,7 @@ export default function Home() {
             className="mt-10 flex items-center justify-center gap-x-6 animate-in"
             style={{ "--index": 4 } as CSSProperties}
           >
-            <Button href="/variants">
+            <Button href="/usage">
               <GrInstall className="w-5 h-5" />
               Installations
             </Button>
@@ -95,9 +100,9 @@ export default function Home() {
               {dockIcons.map(({ href, icon: Icon }, index) => (
                 <DockIcon key={index}>
                   {href ? (
-                    <Link href={href} target="blank">
+                    <LinkPreview url={href}>
                       <Icon className="w-6 h-6" />
-                    </Link>
+                    </LinkPreview>
                   ) : (
                     <Icon className="w-6 h-6" />
                   )}
