@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="mx-auto relative max-w-4xl py-28 sm:py-36 sm:w-1/2 lg:w-3/5 flex-col">
+      <div className="mx-auto relative max-w-4xl py-[3.25rem] sm:py-[6.1rem] sm:w-1/2 lg:w-3/5 flex-col">
         <div className="text-center">
           <div className="z-10 flex mb-8 items-center justify-center">
             <GridPattern
@@ -42,7 +42,7 @@ export default function Home() {
             />
             <div
               className="animate-in"
-              style={{ "--index": 1 } as CSSProperties}
+              style={{ "--index": 0 } as CSSProperties}
             >
               <div
                 className={clsx(
@@ -93,12 +93,12 @@ export default function Home() {
             </Button>
           </div>
           <div
-            className="mt-10 flex-row items-center justify-center animate-in"
+            className="mt-24 flex-row items-center justify-center animate-in"
             style={{ "--index": 5 } as CSSProperties}
           >
             <Dock>
-              {dockIcons.map(({ href, icon: Icon }, index) => (
-                <DockIcon key={index}>
+              {dockIcons.map(({ href, icon: Icon }) => (
+                <DockIcon key={href}>
                   {href ? (
                     <LinkPreview url={href}>
                       <Icon className="w-6 h-6" />

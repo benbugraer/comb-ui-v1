@@ -15,7 +15,6 @@ const links = [
   { label: "Home", href: "/" },
   { label: "Usage", href: "/usage" },
   { label: "Variants", href: "/variants" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navigation() {
