@@ -3,6 +3,7 @@ import { Urbanist } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20">
           {children}
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );

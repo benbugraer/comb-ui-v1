@@ -40,7 +40,10 @@ export default function Navigation() {
         <div className="relative md:hidden">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="flex h-8 w-8 items-center bg-secondary justify-center rounded-lg focus:outline-none after:focus:outline-none">
+              <button
+                aria-label="Menu Button"
+                className="flex h-8 w-8 items-center bg-secondary justify-center rounded-lg focus:outline-none after:focus:outline-none"
+              >
                 <HiMenuAlt3 className="h-6 w-6 cursor-pointer text-black" />
               </button>
             </DropdownMenuTrigger>
