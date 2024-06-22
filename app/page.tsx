@@ -40,6 +40,7 @@ export default function Home() {
                 "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]"
               )}
             />
+
             <div
               className="animate-in"
               style={{ "--index": 0 } as CSSProperties}
@@ -93,22 +94,18 @@ export default function Home() {
             </Button>
           </div>
           <div
-            className="mt-24 flex-row items-center justify-center animate-in"
+            className="mt-24 flex gap-4 relative items-center justify-center animate-in"
             style={{ "--index": 5 } as CSSProperties}
           >
-            <Dock>
-              {dockIcons.map(({ href, icon: Icon }) => (
-                <DockIcon key={href}>
-                  {href ? (
-                    <LinkPreview url={href}>
-                      <Icon className="w-6 h-6" />
-                    </LinkPreview>
-                  ) : (
-                    <Icon className="w-6 h-6" />
-                  )}
-                </DockIcon>
-              ))}
-            </Dock>
+            {dockIcons.map(({ href, icon: Icon }) => (
+              <LinkPreview className="flex" key={href} url={href}>
+                <Dock>
+                  <DockIcon>
+                    <Icon className="w-5 h-5" />
+                  </DockIcon>
+                </Dock>
+              </LinkPreview>
+            ))}
           </div>
         </div>
       </div>

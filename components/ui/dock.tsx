@@ -15,7 +15,7 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "mx-auto w-max mt-8 h-[58px] bg-primary p-2 flex items-end gap-2 rounded-full border dark:border-secondary"
+  "mx-auto w-max  h-[58px] bg-primary p-2 flex items-end gap-2 rounded-xl border dark:border-secondary"
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -33,6 +33,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
 
     const renderChildren = () => {
       return React.Children.map(children, (child: any) => {
+        console.log("Passing mouseX to child:", child);
         return React.cloneElement(child, {
           mouseX: mouseX,
           magnification: magnification,
@@ -76,11 +77,11 @@ const DockIcon = ({
   children,
   ...props
 }: DockIconProps) => {
+  console.log("DockIcon received mouseX:", mouseX);
   const ref = useRef<HTMLDivElement>(null);
 
   const distanceCalc = useTransform(mouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-
     return val - bounds.x - bounds.width / 2;
   });
 
@@ -101,7 +102,7 @@ const DockIcon = ({
       ref={ref}
       style={{ width }}
       className={cn(
-        "flex aspect-square cursor-pointer items-center justify-center rounded-full bg-tertiary",
+        "flex aspect-square cursor-pointer items-center justify-center rounded-xl bg-tertiary",
         className
       )}
       {...props}

@@ -20,7 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={clsx("antialiased bg-white text-black w-full")}>
+      <body
+        className={
+          (clsx("antialiased bg-white text-black w-full"), urbanist.className)
+        }
+      >
         <Navigation />
         <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20">
           {children}
