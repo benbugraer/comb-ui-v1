@@ -24,10 +24,7 @@ export async function markdownToHTML(markdown: string) {
     .use(remarkRehype)
     .use(rehypePrettyCode, {
       // https://rehype-pretty.pages.dev/#usage
-      theme: {
-        light: "min-light",
-        dark: "one-dark-pro",
-      },
+      theme: "dark-plus",
       keepBackground: false,
     })
     .use(rehypeStringify)
