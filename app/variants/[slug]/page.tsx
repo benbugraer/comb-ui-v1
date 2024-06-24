@@ -54,7 +54,7 @@ export default async function Variant({
         className="flex s items-center mt-2 mb-8 text-sm gap-4 animate-in"
         style={{ "--index": 1 } as CSSProperties}
       >
-        {post.metadata.tags.map((tag) => (
+        {post.metadata.tags.map((tag: string) => (
           <Badge key={tag} variant="outline">
             {tag}
           </Badge>
