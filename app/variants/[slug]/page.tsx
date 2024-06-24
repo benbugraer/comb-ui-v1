@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getVariants } from "@/data/variant";
+import { CSSProperties } from "react";
+import { Badge } from "@/components/ui/badge";
 
 // export async function generateMetadata({
 //   params,
@@ -42,12 +44,25 @@ export default async function Variant({
           }),
         }}
       />
-      <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
+      <h1
+        className="title font-medium text-2xl tracking-tighter max-w-[650px] animate-in"
+        style={{ "--index": 0 } as CSSProperties}
+      >
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]"></div>
+      <div
+        className="flex s items-center mt-2 mb-8 text-sm gap-4 animate-in"
+        style={{ "--index": 1 } as CSSProperties}
+      >
+        {post.metadata.tags.map((tag) => (
+          <Badge key={tag} variant="outline">
+            {tag}
+          </Badge>
+        ))}
+      </div>
       <article
-        className="prose dark:prose-invert"
+        className="prose dark:prose-invert animate-in"
+        style={{ "--index": 2 } as CSSProperties}
         dangerouslySetInnerHTML={{ __html: post.source }}
       ></article>
     </section>
