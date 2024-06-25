@@ -189,8 +189,8 @@ pre > code {
 
 code[data-theme*=" "],
 code[data-theme*=" "] span {
-  color: var(--shiki-dark);
-  background-color: var(--shiki-dark-bg);
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
 }
 
 code[data-line-numbers] {
@@ -217,6 +217,7 @@ code > [data-line]::before {
   margin-right: 2rem;
   text-align: right;
   color: gray;
+  background-color: var(--primary-foreground);
 }
 
 code[data-line-numbers-max-digits="2"] > [data-line]::before {

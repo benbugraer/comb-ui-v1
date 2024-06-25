@@ -24,8 +24,8 @@ export async function markdownToHTML(markdown: string) {
     .use(remarkRehype)
     .use(rehypePrettyCode, {
       // https://rehype-pretty.pages.dev/#usage
-      theme: "dark-plus",
-      keepBackground: false,
+      theme: "one-light",
+      filterMetaString: (string) => string.replace(/filename="[^"]*"/, ""),
     })
     .use(rehypeStringify)
     .process(markdown);

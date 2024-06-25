@@ -36,19 +36,6 @@ export default async function VariantsPage() {
         </p>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-        {/* {DATA.projects.map((project, id) => (
-          <ProjectCard
-            key={project.title}
-            href={project.href}
-            title={project.title}
-            description={project.description}
-            dates={project.dates}
-            tags={project.technologies}
-            image={project.image}
-            video={project.video}
-            links={project.links}
-          />
-        ))} */}
         {variants.map((variant, id) => (
           <Link
             key={id}

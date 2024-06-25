@@ -26,7 +26,7 @@ export default async function Variant({
   }
 
   return (
-    <section
+    <div
       id="blog"
       className="mx-auto relative max-w-2xl py-[3.25rem] sm:py-[6.1rem] sm:w-1/2 lg:w-3/5 flex-col"
     >
@@ -51,7 +51,7 @@ export default async function Variant({
         {post.metadata.title}
       </h1>
       <div
-        className="flex s items-center mt-2 mb-8 text-sm gap-4 animate-in"
+        className="flex s items-center mt-8 mb-8 text-sm gap-4 animate-in"
         style={{ "--index": 1 } as CSSProperties}
       >
         {post.metadata.tags.map((tag: string) => (
@@ -65,6 +65,6 @@ export default async function Variant({
         style={{ "--index": 2 } as CSSProperties}
         dangerouslySetInnerHTML={{ __html: post.source }}
       ></article>
-    </section>
+    </div>
   );
 }

@@ -22,7 +22,6 @@ export default function Home() {
     { href: "https://magicui.design/", icon: FaWandMagicSparkles },
     { href: "https://ui.shadcn.com/", icon: SiShadcnui },
     { href: "https://www.radix-ui.com/", icon: SiRadixui },
-    { href: "https://nextui.org/", icon: SiNextui },
   ];
 
   return (
