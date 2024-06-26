@@ -45,7 +45,7 @@ export default async function Variant({
         }}
       />
       <h1
-        className="title font-medium text-2xl tracking-tighter max-w-[650px] animate-in"
+        className="title font-medium text-2xl max-w-[650px] animate-in"
         style={{ "--index": 0 } as CSSProperties}
       >
         {post.metadata.title}

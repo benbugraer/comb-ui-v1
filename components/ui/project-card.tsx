@@ -33,7 +33,7 @@ export function ProjectCard({ title, description, tags, image }: Props) {
       <CardHeader className="px-2">
         <div className="space-y-1">
           <CardTitle className="mt-1 text-base">{title}</CardTitle>
-          <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
+          <Markdown className="prose max-w-full text-tertiary font-sans text-xs text-muted-foreground">
             {description}
           </Markdown>
         </div>
