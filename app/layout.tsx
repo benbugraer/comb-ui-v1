@@ -4,6 +4,7 @@ import clsx from "clsx";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Provider from "./provider";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -27,7 +28,7 @@ export default function RootLayout({
       >
         <Navigation />
         <div className="mx-auto px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20">
-          {children}
+          <Provider>{children}</Provider>
         </div>
         <SpeedInsights />
       </body>

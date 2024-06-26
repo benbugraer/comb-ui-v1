@@ -1,13 +1,19 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { getUsagePosts } from "@/data/usage";
 import Meteors from "@/components/ui/meteors";
-import { Metadata } from "next";
 import { CSSProperties } from "react";
+import { ProjectCard } from "@/components/ui/project-card";
 
 export const metadata: Metadata = {
-  title: "CombUI | Usage",
-  description: "Learn how to use CombUI in your projects.",
+  title: "CombUI | Usage & Installations",
+  description:
+    "Welcome to the Variants page of CombUI. Explore different variations and options available in our product.",
 };
 
-export default function UsagePage() {
+export default async function UsagesPage() {
+  const usages = await getUsagePosts();
+
   return (
     <section className="mx-auto relative max-w-4xl py-[3.25rem] sm:py-[2.1rem] sm:w-1/2 lg:w-3/5 flex-col space-y-12">
       <div
@@ -16,10 +22,10 @@ export default function UsagePage() {
       >
         <Meteors number={30} />
         <h1
-          className="z-10 uppercase whitespace-pre-wrap text-center text-3xl font-medium tracking-tighter text-black dark:text-white animate-in"
+          className="z-10 uppercase whitespace-pre-wrap text-center text-3xl font-medium  text-black dark:text-white animate-in"
           style={{ "--index": 1 } as CSSProperties}
         >
-          Usage
+          Usage & Installations
         </h1>
         <p
           className="text-tertiary mt-4 animate-in"
@@ -31,7 +37,23 @@ export default function UsagePage() {
         </p>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-        {/* Add your content here */}
+        {usages.map((usages, id) => (
+          <Link
+            key={id}
+            className="flex flex-col space-y-1 mb-4 animate-in"
+            href={`/usage/${usages.slug}`}
+            style={{ "--index": 3 } as CSSProperties}
+          >
+            <div className="w-full flex flex-col">
+              <ProjectCard
+                image={usages.metadata.image}
+                title={usages.metadata.title}
+                description={usages.metadata.description}
+                tags={usages.metadata.tags}
+              ></ProjectCard>
+            </div>
+          </Link>
+        ))}
       </div>
     </section>
   );

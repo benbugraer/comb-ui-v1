@@ -32,8 +32,8 @@ export async function markdownToHTML(markdown: string) {
   return p.toString();
 }
 
-export async function getVariants(slug: string) {
-  const filePath = path.join("content", "variants", `${slug}.mdx`);
+export async function getUsages(slug: string) {
+  const filePath = path.join("content", "usages", `${slug}.mdx`);
   let source = fs.readFileSync(filePath, "utf-8");
   const { content: rawContent, data: metadata } = matter(source);
   const content = await markdownToHTML(rawContent);
@@ -44,12 +44,12 @@ export async function getVariants(slug: string) {
   };
 }
 
-async function getAllVariants(dir: string) {
+async function getAllUsages(dir: string) {
   let mdxFiles = getMDXFiles(dir);
   return Promise.all(
     mdxFiles.map(async (file) => {
       let slug = path.basename(file, path.extname(file));
-      let { metadata, source } = await getVariants(slug);
+      let { metadata, source } = await getUsages(slug);
       return {
         metadata,
         slug,
@@ -59,6 +59,6 @@ async function getAllVariants(dir: string) {
   );
 }
 
-export async function getVariantPosts() {
-  return getAllVariants(path.join(process.cwd(), "content", "variants"));
+export async function getUsagePosts() {
+  return getAllUsages(path.join(process.cwd(), "content", "usages"));
 }

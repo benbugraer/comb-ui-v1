@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getVariants } from "@/data/variant";
+import { getUsages } from "@/data/usage";
 import { CSSProperties } from "react";
-import { Badge } from "@/components/ui/badge";
+import { Snippet } from "@nextui-org/react";
 
 // export async function generateMetadata({
 //   params,
@@ -12,16 +12,16 @@ import { Badge } from "@/components/ui/badge";
 //   };
 // });
 
-export default async function Variant({
+export default async function Usages({
   params,
 }: {
   params: {
     slug: string;
   };
 }) {
-  let variant = await getVariants(params.slug);
+  let usage = await getUsages(params.slug);
 
-  if (!variant) {
+  if (!usage) {
     notFound();
   }
 
@@ -32,9 +32,9 @@ export default async function Variant({
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            headline: variant.metadata.title,
-            description: variant.metadata.description,
-            icons: variant.metadata.icons,
+            title: usage.metadata.title,
+            description: usage.metadata.description,
+            snippet: usage.metadata.snippet,
           }),
         }}
       />
@@ -42,23 +42,28 @@ export default async function Variant({
         className="title font-medium bg-black text-white p-2.5 inline-block rounded-2xl text-xl max-w-[650px] animate-in"
         style={{ "--index": 0 } as CSSProperties}
       >
-        {variant.metadata.title}
+        {usage.metadata.title}
       </h1>
       <div
         className="flex s items-center mt-8 mb-8 text-sm gap-4 animate-in"
         style={{ "--index": 1 } as CSSProperties}
       >
-        {variant.metadata.tags.map((tag: string) => (
-          <Badge key={tag} variant="outline">
-            {tag}
-          </Badge>
-        ))}
+        <Snippet
+          variant="shadow"
+          className="bg-tertiary text-primary"
+          tooltipProps={{
+            content: "Copy this snippet",
+            placement: "right",
+            closeDelay: 0,
+          }}
+        >
+          {usage.metadata.snippet}
+        </Snippet>
       </div>
-      <div className="mt-4">{variant.metadata.icons}</div>
       <article
         className="prose dark:prose-invert animate-in"
         style={{ "--index": 2 } as CSSProperties}
-        dangerouslySetInnerHTML={{ __html: variant.source }}
+        dangerouslySetInnerHTML={{ __html: usage.source }}
       ></article>
     </div>
   );
