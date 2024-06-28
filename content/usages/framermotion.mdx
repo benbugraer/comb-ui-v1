@@ -1,46 +1,26 @@
 ---
 title: "Framer Motion"
-description: "Framer Motion card flip to reveal additional information"
+description: "Complete documentation of the Framer Motion animation library. A production-ready motion library for React."
 snippet: "npm install framer-motion"
+snippet2: "yarn add framer-motion"
+snippet3: "pnpm install framer-motion"
 image: "/usages/framerM.png"
 ---
 
-A simple Framer Motion component that flips to reveal additional information.
+## Usage
 
-It's set to flip when tapping on the card that way you could interact with other elements, such as copying the card details to clipboard. But could also flip `while-tap` to get a quick look at the sensitive data.
+Framer Motion is a simple yet powerful motion library for React.
 
-Using `spring` transition, the card flips on the Y-axis with a smooth and organic feeling animation. This kind of UI is ideal for use cases such as finance apps, but you can get creative.
+It powers the amazing animations and interactions in Framer, the web builder for creative pros. Zero code, maximum speed.
 
-## Unstyled component
+````jsx
+import { motion } from "framer-motion"
 
-Here is an unstyled version to get you started.
-
-```jsx {1-3,4}
-import { motion } from "framer-motion";
-
-export default function CreditCard() {
-  return (
-    <motion.div
-      whileTap="flipped"
-      style={{ transformStyle: "preserve-3d" }}
-      transition={{ type: "spring", duration: 1 }}
-      variants={{
-        flipped: {
-          rotateY: 180,
-          rotateX: 5,
-        },
-      }}
-    >
-      {/* front side */}
-      <div style={{ backfaceVisibility: "hidden" }}></div>
-      {/* backside */}
-      <div
-        style={{
-          backfaceVisibility: "hidden",
-          transform: "rotateY(180deg)",
-        }}
-      ></div>
-    </motion.div>
-  );
-}
-```
+export const MyComponent = () => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}
+  />
+)```
+````

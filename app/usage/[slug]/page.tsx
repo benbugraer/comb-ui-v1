@@ -35,34 +35,79 @@ export default async function Usages({
             title: usage.metadata.title,
             description: usage.metadata.description,
             snippet: usage.metadata.snippet,
+            snippet2: usage.metadata.snippet2,
+            snippet3: usage.metadata.snippet3,
           }),
         }}
       />
       <h1
-        className="title font-medium p-2.5 inline-block rounded-2xl text-xl max-w-[650px] animate-in"
+        className="title font-medium uppercase inline-block rounded-2xl text-2xl max-w-[650px] animate-in"
         style={{ "--index": 0 } as CSSProperties}
       >
         {usage.metadata.title}
       </h1>
+      <p
+        className="text-tertiary text-lg animate-in mt-4 mb-12"
+        style={{ "--index": 1 } as CSSProperties}
+      >
+        {usage.metadata.description}
+      </p>
+      <h1
+        className="text-2xl mt-3 font-bold animate-in"
+        style={{ "--index": 2 } as CSSProperties}
+      >
+        Installations
+      </h1>
+      <p
+        className="mt-3 text-tertiary text-lg animate-in"
+        style={{ "--index": 3 } as CSSProperties}
+      >
+        There 3 packet modules for your own project.
+      </p>
       <div
         className="flex s items-center mt-8 mb-8 text-sm gap-4 animate-in"
-        style={{ "--index": 1 } as CSSProperties}
+        style={{ "--index": 4 } as CSSProperties}
       >
         <Snippet
           variant="shadow"
-          className="bg-tertiary text-primary"
+          className="bg-tertiary text-primary animate-in w-full"
           tooltipProps={{
             content: "Copy this snippet",
             placement: "right",
             closeDelay: 0,
           }}
+          style={{ "--index": 5 } as CSSProperties}
         >
-          {usage.metadata.snippet}
+          <span>{usage.metadata.snippet}</span>
+        </Snippet>
+        <Snippet
+          variant="shadow"
+          className="bg-tertiary text-primary animate-in w-full"
+          tooltipProps={{
+            content: "Copy this snippet",
+            placement: "right",
+            closeDelay: 0,
+          }}
+          style={{ "--index": 6 } as CSSProperties}
+        >
+          <span>{usage.metadata.snippet2}</span>
+        </Snippet>
+        <Snippet
+          variant="shadow"
+          className="bg-tertiary text-primary animate-in w-full"
+          tooltipProps={{
+            content: "Copy this snippet",
+            placement: "right",
+            closeDelay: 0,
+          }}
+          style={{ "--index": 7 } as CSSProperties}
+        >
+          <span>{usage.metadata.snippet3}</span>
         </Snippet>
       </div>
       <article
         className="prose dark:prose-invert animate-in"
-        style={{ "--index": 2 } as CSSProperties}
+        style={{ "--index": 8 } as CSSProperties}
         dangerouslySetInnerHTML={{ __html: usage.source }}
       ></article>
     </div>
