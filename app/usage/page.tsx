@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getUsagePosts } from "@/data/usage";
-import Meteors from "@/components/ui/meteors";
 import { CSSProperties } from "react";
 import { ProjectCard } from "@/components/ui/project-card";
+import Particles from "@/components/ui/particles";
 
 export const metadata: Metadata = {
   title: "CombUI | Usage & Installations",
@@ -20,7 +20,6 @@ export default async function UsagesPage() {
         className="relative flex-row text-center h-full w-full max-w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-16 mb-24 md:shadow-xl animate-in"
         style={{ "--index": 0 } as CSSProperties}
       >
-        <Meteors number={30} />
         <h1
           className="z-10 uppercase whitespace-pre-wrap text-center text-3xl font-medium  text-black dark:text-white animate-in"
           style={{ "--index": 1 } as CSSProperties}

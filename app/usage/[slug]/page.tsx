@@ -39,7 +39,7 @@ export default async function Usages({
         }}
       />
       <h1
-        className="title font-medium bg-black text-white p-2.5 inline-block rounded-2xl text-xl max-w-[650px] animate-in"
+        className="title font-medium p-2.5 inline-block rounded-2xl text-xl max-w-[650px] animate-in"
         style={{ "--index": 0 } as CSSProperties}
       >
         {usage.metadata.title}

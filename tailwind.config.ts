@@ -76,22 +76,27 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        meteor: {
-          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
-          "70%": { opacity: "1" },
-          "100%": {
-            transform: "rotate(215deg) translateX(-500px)",
-            opacity: "0",
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
           },
         },
-        shimmer: {
-          "0%, 90%, 100%": {
-            "background-position": "calc(-100% - var(--shimmer-width)) 0",
-          },
-          "30%, 60%": {
-            "background-position": "calc(100% + var(--shimmer-width)) 0",
-          },
-        },
+        // meteor: {
+        //   "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+        //   "70%": { opacity: "1" },
+        //   "100%": {
+        //     transform: "rotate(215deg) translateX(-500px)",
+        //     opacity: "0",
+        //   },
+        // },
+        // shimmer: {
+        //   "0%, 90%, 100%": {
+        //     "background-position": "calc(-100% - var(--shimmer-width)) 0",
+        //   },
+        //   "30%, 60%": {
+        //     "background-position": "calc(100% + var(--shimmer-width)) 0",
+        //   },
+        // },
         in: {
           "0%": { transform: "translateY(18px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
@@ -110,7 +115,8 @@ const config = {
         },
       },
       animation: {
-        meteor: "meteor 5s linear infinite",
+        gradient: "gradient 8s linear infinite",
+        // meteor: "meteor 5s linear infinite",
         in: "in .6s both",
         "in-reverse": "in-reverse .6s both",
         shimmer: "shimmer 8s infinite",

@@ -15,6 +15,7 @@ import { SiShadcnui, SiRadixui, SiNextui } from "react-icons/si";
 import { FaWandMagicSparkles } from "react-icons/fa6";
 import GridPattern from "@/components/ui/grid-pattern";
 import { LinkPreview } from "@/components/ui/link-preview";
+import AnimatedGradientText from "@/components/ui/animated-gradient-text";
 
 export default function Home() {
   const dockIcons = [
@@ -28,42 +29,34 @@ export default function Home() {
     <>
       <div className="mx-auto relative max-w-4xl py-[3.25rem] sm:py-[6.1rem] sm:w-1/2 lg:w-3/5 flex-col">
         <div className="text-center">
-          <div className="z-10 flex mb-8 items-center justify-center">
-            <GridPattern
-              width={45}
-              height={45}
-              x={-1}
-              y={-1}
-              strokeDasharray={"4 2"}
-              className={cn(
-                "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]"
-              )}
-            />
-
-            <div
-              className="animate-in"
-              style={{ "--index": 0 } as CSSProperties}
-            >
-              <div
-                className={clsx(
-                  "group rounded-lg border border-primary bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 animate-in"
+          <GridPattern
+            width={45}
+            height={45}
+            x={-1}
+            y={-1}
+            strokeDasharray={"4 2"}
+            className={cn(
+              "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]"
+            )}
+          />
+          <Link
+            href="https://github.com/benbugraer"
+            target="_blank"
+            className="z-10 flex mb-[3.3rem] -mt-0.5 items-center justify-center animate-in"
+            style={{ "--index": 1 } as CSSProperties}
+          >
+            <AnimatedGradientText>
+              <span
+                className={cn(
+                  `inline animate-gradient font-light bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
                 )}
-                style={{ "--index": 1 } as CSSProperties}
               >
-                <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                  <Link
-                    target="blank"
-                    href="https://github.com/benbugraer"
-                    className="font-light text-sm"
-                  >
-                    Created By{" "}
-                    <span className="font-bold uppercase">bugra er</span>
-                  </Link>
-                  <IoMdArrowRoundForward className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-                </AnimatedShinyText>
-              </div>
-            </div>
-          </div>
+                Created By{" "}
+                <span className=" uppercase font-bold">bugra er</span>
+              </span>
+              <IoMdArrowRoundForward className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+            </AnimatedGradientText>
+          </Link>
           <h1
             className="text-4xl font-light tracking-tight sm:text-5xl animate-in"
             style={{ "--index": 2 } as CSSProperties}

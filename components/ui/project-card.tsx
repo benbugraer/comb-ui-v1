@@ -20,13 +20,13 @@ export function ProjectCard({ title, description, tags, image }: Props) {
       }
     >
       {image && (
-        <div className="h-40 w-full overflow-hidden object-cover object-top">
+        <div className="h-40 w-full overflow-hidden object-cover object-top mb-6">
           <Image
             src={image}
             alt={title}
             width={600}
             height={400}
-            className="h-40 w-full overflow-hidden object-cover object-top"
+            className="h-full  w-full overflow-hidden object-cover object-top"
           />
         </div>
       )}
