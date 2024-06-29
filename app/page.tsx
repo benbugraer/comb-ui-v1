@@ -52,7 +52,7 @@ export default function Home() {
             <AnimatedGradientText>
               <span
                 className={cn(
-                  `inline animate-gradient font-light bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+                  `inline animate-gradient font-light bg-gradient-to-r from-[#111] via-[#ccc] to-[#111] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
                 )}
               >
                 Created By{" "}
@@ -90,14 +90,14 @@ export default function Home() {
             </Button>
           </div>
           <div
-            className="mt-24 flex gap-4 relative items-center justify-center animate-in"
+            className="mt-24 sm:flex grid grid-rows-2 grid-flow-col gap-4 relative items-center justify-center animate-in"
             style={{ "--index": 5 } as CSSProperties}
           >
             {dockIcons.map(({ href, icon: Icon }) => (
-              <LinkPreview className="flex" key={href} url={href}>
+              <LinkPreview key={href} url={href}>
                 <Dock>
                   <DockIcon>
-                    <Icon aria-label="icons" className="w-5 h-5" />
+                    <Icon aria-label="icons" className="w-5 h-5 " />
                   </DockIcon>
                 </Dock>
               </LinkPreview>

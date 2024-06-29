@@ -65,7 +65,7 @@ export default async function Usages({
         There 3 packet modules for your own project.
       </p>
       <div
-        className="flex s items-center mt-8 mb-8 text-sm gap-4 animate-in"
+        className="sm:flex grid grid-rows-1 grid-flow-row items-center mt-8 mb-8 text-sm gap-4 animate-in"
         style={{ "--index": 4 } as CSSProperties}
       >
         <Snippet
