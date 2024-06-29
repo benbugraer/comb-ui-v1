@@ -55,11 +55,11 @@ export default async function Variant({
         ))}
       </div>
       <div className="mt-4">{variant.metadata.icons}</div>
-      <article
+      <div
         className="prose dark:prose-invert animate-in"
         style={{ "--index": 2 } as CSSProperties}
         dangerouslySetInnerHTML={{ __html: variant.source }}
-      ></article>
+      ></div>
     </div>
   );
 }

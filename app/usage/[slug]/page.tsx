@@ -65,51 +65,35 @@ export default async function Usages({
         There 3 packet modules for your own project.
       </p>
       <div
-        className="sm:flex grid grid-rows-1 grid-flow-row items-center mt-8 mb-8 text-sm gap-4 animate-in"
+        className="grid grid-rows-1 sm:grid-flow-row items-center mt-8 mb-8 text-sm gap-4 animate-in"
         style={{ "--index": 4 } as CSSProperties}
       >
-        <Snippet
-          variant="shadow"
-          className="bg-tertiary text-primary animate-in w-full"
-          tooltipProps={{
-            content: "Copy this snippet",
-            placement: "right",
-            closeDelay: 0,
-          }}
-          style={{ "--index": 5 } as CSSProperties}
-        >
-          <span>{usage.metadata.snippet}</span>
-        </Snippet>
-        <Snippet
-          variant="shadow"
-          className="bg-tertiary text-primary animate-in w-full"
-          tooltipProps={{
-            content: "Copy this snippet",
-            placement: "right",
-            closeDelay: 0,
-          }}
-          style={{ "--index": 6 } as CSSProperties}
-        >
-          <span>{usage.metadata.snippet2}</span>
-        </Snippet>
-        <Snippet
-          variant="shadow"
-          className="bg-tertiary text-primary animate-in w-full"
-          tooltipProps={{
-            content: "Copy this snippet",
-            placement: "right",
-            closeDelay: 0,
-          }}
-          style={{ "--index": 7 } as CSSProperties}
-        >
-          <span>{usage.metadata.snippet3}</span>
-        </Snippet>
+        {[
+          usage.metadata.snippet,
+          usage.metadata.snippet2,
+          usage.metadata.snippet3,
+        ].map((snippet, index) => (
+          <Snippet
+            key={index}
+            variant="shadow"
+            className="bg-tertiary text-primary animate-in max-w-md w-full" // Burada max-w-md sınıfı ekledim
+            tooltipProps={{
+              content: "Copy this snippet",
+              placement: "right",
+              closeDelay: 0,
+            }}
+            style={{ "--index": index + 5 } as CSSProperties}
+          >
+            <span>{snippet}</span>
+          </Snippet>
+        ))}
       </div>
-      <article
+
+      <div
         className="prose dark:prose-invert animate-in"
         style={{ "--index": 8 } as CSSProperties}
         dangerouslySetInnerHTML={{ __html: usage.source }}
-      ></article>
+      ></div>
     </div>
   );
 }

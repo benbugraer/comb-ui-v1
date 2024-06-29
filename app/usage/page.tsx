@@ -3,7 +3,6 @@ import Link from "next/link";
 import { getUsagePosts } from "@/data/usage";
 import { CSSProperties } from "react";
 import { ProjectCard } from "@/components/ui/project-card";
-import Particles from "@/components/ui/particles";
 
 export const metadata: Metadata = {
   title: "CombUI | Usage & Installations",

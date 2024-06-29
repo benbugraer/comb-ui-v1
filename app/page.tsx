@@ -1,11 +1,8 @@
-import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { IoMdArrowRoundForward } from "react-icons/io";
-import clsx from "clsx";
 import Link from "next/link";
 import { CSSProperties } from "react";
 import Particles from "@/components/ui/particles";
 import { cn } from "@/lib/utils";
-import DotPattern from "@/components/ui/dot-pattern";
 import Button from "@/components/Button";
 import { GrInstall } from "react-icons/gr";
 import { IoDocuments } from "react-icons/io5";
