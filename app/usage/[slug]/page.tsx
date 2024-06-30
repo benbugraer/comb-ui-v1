@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getUsages } from "@/data/usage";
 import { CSSProperties } from "react";
 import { Snippet } from "@nextui-org/react";
+import { Package } from "lucide-react";
+import PackagesTabs from "@/components/PackagesTabs";
 
 // export async function generateMetadata({
 //   params,
@@ -64,7 +66,8 @@ export default async function Usages({
       >
         There 3 packet modules for your own project.
       </p>
-      <div
+      <PackagesTabs />
+      {/* <div
         className="grid grid-rows-1 sm:grid-flow-row items-center mt-8 mb-8 text-sm gap-4 animate-in"
         style={{ "--index": 4 } as CSSProperties}
       >
@@ -87,7 +90,7 @@ export default async function Usages({
             <span>{snippet}</span>
           </Snippet>
         ))}
-      </div>
+      </div> */}
 
       <div
         className="prose dark:prose-invert animate-in"
