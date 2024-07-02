@@ -43,7 +43,7 @@ export default function Home() {
           <Link
             href="https://github.com/benbugraer"
             target="_blank"
-            className="z-10 flex mb-[3.3rem] -mt-0.5 items-center justify-center animate-in"
+            className="z-10 inline-block mb-[3.3rem] -mt-0.5 items-center justify-center animate-in"
             style={{ "--index": 1 } as CSSProperties}
           >
             <AnimatedGradientText>
