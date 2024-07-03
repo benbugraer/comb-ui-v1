@@ -8,7 +8,15 @@ import { GrInstall } from "react-icons/gr";
 import { IoDocuments } from "react-icons/io5";
 import { Dock, DockIcon } from "@/components/ui/dock";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import { SiShadcnui, SiRadixui, SiNextui, SiHeadlessui } from "react-icons/si";
+import {
+  SiShadcnui,
+  SiRadixui,
+  SiNextui,
+  SiHeadlessui,
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+} from "react-icons/si";
 import { FaWandMagicSparkles } from "react-icons/fa6";
 import GridPattern from "@/components/ui/grid-pattern";
 import { LinkPreview } from "@/components/ui/link-preview";
@@ -17,12 +25,15 @@ import AceternityLogo from "@/components/AceternityLogo";
 
 export default function Home() {
   const dockIcons = [
-    { href: "https://www.framer.com/motion/", icon: TbBrandFramerMotion },
-    { href: "https://magicui.design/", icon: FaWandMagicSparkles },
-    { href: "https://ui.aceternity.com/", icon: AceternityLogo },
-    { href: "https://ui.shadcn.com/", icon: SiShadcnui },
-    { href: "https://www.radix-ui.com/", icon: SiRadixui },
+    { href: "https://nextjs.org/", icon: SiNextdotjs },
     { href: "https://nextui.org/", icon: SiNextui },
+    { href: "https://tailwindcss.com/", icon: SiTailwindcss },
+    { href: "https://ui.shadcn.com/", icon: SiShadcnui },
+    { href: "https://react.dev/", icon: SiReact },
+    { href: "https://ui.aceternity.com/", icon: AceternityLogo },
+    { href: "https://www.framer.com/motion/", icon: TbBrandFramerMotion },
+    { href: "https://www.radix-ui.com/", icon: SiRadixui },
+    { href: "https://magicui.design/", icon: FaWandMagicSparkles },
     { href: "https://headlessui.com/", icon: SiHeadlessui },
   ];
 
@@ -87,7 +98,7 @@ export default function Home() {
             </Button>
           </div>
           <div
-            className="mt-24 sm:flex grid grid-rows-2 grid-flow-col gap-4 relative items-center justify-center animate-in"
+            className="mt-24  grid grid-rows-2 grid-flow-col gap-4 relative items-center justify-center animate-in"
             style={{ "--index": 5 } as CSSProperties}
           >
             {dockIcons.map(({ href, icon: Icon }) => (

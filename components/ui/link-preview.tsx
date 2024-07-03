@@ -101,6 +101,7 @@ export const LinkPreview = ({
           onMouseMove={handleMouseMove}
           className={cn("text-black dark:text-white", className)}
           href={url}
+          target="blank"
         >
           {children}
         </HoverCardPrimitive.Trigger>
@@ -132,6 +133,7 @@ export const LinkPreview = ({
                 }}
               >
                 <Link
+                  target="blank"
                   aria-label="Link Preview"
                   href={url}
                   className="block p-1 bg-tertiary border-2 border-tertiary shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
