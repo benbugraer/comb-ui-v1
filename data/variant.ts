@@ -6,6 +6,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import matter from "gray-matter"; // Import the 'matter' module
+import { transformerCopyButton } from "@rehype-pretty/transformers";
 
 type Metadata = {
   title: string;
@@ -22,7 +23,12 @@ export async function markdownToHTML(markdown: string) {
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypePrettyCode, {
-      // https://rehype-pretty.pages.dev/#usage
+      transformers: [
+        transformerCopyButton({
+          visibility: "always",
+          feedbackDuration: 3_000,
+        }),
+      ],
       theme: "one-light",
       filterMetaString: (string) => string.replace(/filename="[^"]*"/, ""),
     })
