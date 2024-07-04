@@ -5,7 +5,7 @@ import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
-import matter from "gray-matter"; 
+import matter from "gray-matter";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 
 type Metadata = {

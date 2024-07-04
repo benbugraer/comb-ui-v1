@@ -26,15 +26,12 @@ import AceternityLogo from "@/components/AceternityLogo";
 export default function Home() {
   const dockIcons = [
     { href: "https://nextjs.org/", icon: SiNextdotjs },
-    { href: "https://nextui.org/", icon: SiNextui },
-    { href: "https://tailwindcss.com/", icon: SiTailwindcss },
-    { href: "https://ui.shadcn.com/", icon: SiShadcnui },
     { href: "https://react.dev/", icon: SiReact },
+    { href: "https://ui.shadcn.com/", icon: SiShadcnui },
+    { href: "https://tailwindcss.com/", icon: SiTailwindcss },
     { href: "https://ui.aceternity.com/", icon: AceternityLogo },
     { href: "https://www.framer.com/motion/", icon: TbBrandFramerMotion },
-    { href: "https://www.radix-ui.com/", icon: SiRadixui },
     { href: "https://magicui.design/", icon: FaWandMagicSparkles },
-    { href: "https://headlessui.com/", icon: SiHeadlessui },
   ];
 
   return (
@@ -98,7 +95,7 @@ export default function Home() {
             </Button>
           </div>
           <div
-            className="mt-24  grid grid-rows-2 grid-flow-col gap-4 relative items-center justify-center animate-in"
+            className="mt-24 sm:flex grid grid-rows-2 grid-flow-col gap-4 relative items-center justify-center animate-in"
             style={{ "--index": 5 } as CSSProperties}
           >
             {dockIcons.map(({ href, icon: Icon }) => (
