@@ -1,46 +1,52 @@
 ---
 title: "Shadcn UI"
-description: "Framer Motion card flip to reveal additional information"
-snippet: "npm install framer-motion"
+description: "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source."
+snippet: "npx shadcn-ui@latest init"
+snippet2: "npx shadcn-ui@latest init"
+snippet3: "pnpm dlx shadcn-ui@latest init"
 image: "/usages/shadcnui.webp"
 ---
 
-A simple Framer Motion component that flips to reveal additional information.
+## Configure components.json
 
-It's set to flip when tapping on the card that way you could interact with other elements, such as copying the card details to clipboard. But could also flip `while-tap` to get a quick look at the sensitive data.
+You will be asked a few questions to configure components.json:
 
-Using `spring` transition, the card flips on the Y-axis with a smooth and organic feeling animation. This kind of UI is ideal for use cases such as finance apps, but you can get creative.
-
-## Unstyled component
-
-Here is an unstyled version to get you started.
-
-```jsx {1-3,4}
-import { motion } from "framer-motion";
-
-export default function CreditCard() {
-  return (
-    <motion.div
-      whileTap="flipped"
-      style={{ transformStyle: "preserve-3d" }}
-      transition={{ type: "spring", duration: 1 }}
-      variants={{
-        flipped: {
-          rotateY: 180,
-          rotateX: 5,
-        },
-      }}
-    >
-      {/* front side */}
-      <div style={{ backfaceVisibility: "hidden" }}></div>
-      {/* backside */}
-      <div
-        style={{
-          backfaceVisibility: "hidden",
-          transform: "rotateY(180deg)",
-        }}
-      ></div>
-    </motion.div>
-  );
-}
+```json
+Which style would you like to use? › Default
+Which color would you like to use as base color? › Slate
+Do you want to use CSS variables for colors? › no / yes
 ```
+
+## App structure
+
+Here's how I structure my ``Next.js`` apps. You can use this as a reference:
+
+```json
+.
+├── app
+│   ├── layout.tsx
+│   └── page.tsx
+├── components
+│   ├── ui
+│   │   ├── alert-dialog.tsx
+│   │   ├── button.tsx
+│   │   ├── dropdown-menu.tsx
+│   │   └── ...
+│   ├── main-nav.tsx
+│   ├── page-header.tsx
+│   └── ...
+├── lib
+│   └── utils.ts
+├── styles
+│   └── globals.css
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+└── tsconfig.json
+```
+
+
+You can now start adding [Components](https://ui.shadcn.com/docs/components/accordion) to your project.
+
+

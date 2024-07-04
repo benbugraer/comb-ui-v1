@@ -125,32 +125,6 @@ export default async function Usages({
             ))}
           </Tabs>
         </div>
-
-        {/* <div
-      className="grid grid-rows-1 sm:grid-flow-row items-center mt-8 mb-8 text-sm gap-4 animate-in"
-      style={{ "--index": 4 } as CSSProperties}
-    >
-      {[
-        usage.metadata.snippet,
-        usage.metadata.snippet2,
-        usage.metadata.snippet3,
-      ].map((snippet, index) => (
-        <Snippet
-          key={index}
-          variant="shadow"
-          className="bg-tertiary text-primary animate-in max-w-md w-full" // Burada max-w-md sınıfı ekledim
-          tooltipProps={{
-            content: "Copy this snippet",
-            placement: "right",
-            closeDelay: 0,
-          }}
-          style={{ "--index": index + 5 } as CSSProperties}
-        >
-          <span>{snippet}</span>
-        </Snippet>
-      ))}
-    </div> */}
-
         <div
           className="prose dark:prose-invert animate-in"
           style={{ "--index": 5 } as CSSProperties}

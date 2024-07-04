@@ -27,11 +27,11 @@ export default function Home() {
   const dockIcons = [
     { href: "https://nextjs.org/", icon: SiNextdotjs },
     { href: "https://react.dev/", icon: SiReact },
-    { href: "https://ui.shadcn.com/", icon: SiShadcnui },
     { href: "https://tailwindcss.com/", icon: SiTailwindcss },
-    { href: "https://ui.aceternity.com/", icon: AceternityLogo },
     { href: "https://www.framer.com/motion/", icon: TbBrandFramerMotion },
+    { href: "https://ui.shadcn.com/", icon: SiShadcnui },
     { href: "https://magicui.design/", icon: FaWandMagicSparkles },
+    { href: "https://ui.aceternity.com/", icon: AceternityLogo },
   ];
 
   return (
