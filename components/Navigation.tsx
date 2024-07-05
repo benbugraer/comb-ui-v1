@@ -21,7 +21,7 @@ export default function Navigation() {
   const pathname = `/${usePathname().split("/")[1]}`;
 
   return (
-    <header className="md:mt-3">
+    <header>
       <nav
         className="mx-auto flex max-w-[60rem] items-center justify-between gap-3 px-4 py-3 md:px-6 animate-in-reverse"
         style={{ "--index": 0 } as CSSProperties}
@@ -66,6 +66,7 @@ export default function Navigation() {
           </DropdownMenu>
         </div>
       </nav>
+      <hr className="mt-4 h-px border-none bg-tertiary"></hr>
     </header>
   );
 }

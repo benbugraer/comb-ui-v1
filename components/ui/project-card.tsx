@@ -38,12 +38,12 @@ export function ProjectCard({ title, description, tags, image }: Props) {
           </Markdown>
         </div>
       </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-2">
+      <CardContent className="mt-auto flex flex-col px-2 pb-4">
         {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
+          <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag) => (
               <Badge
-                className="px-1 py-0 text-[10px] bg-tertiary text-primary"
+                className="px-1 py-0 text-[0.75rem] prose bg-tertiary text-primary"
                 key={tag}
               >
                 {tag}
@@ -52,7 +52,6 @@ export function ProjectCard({ title, description, tags, image }: Props) {
           </div>
         )}
       </CardContent>
-      <CardFooter className="px-2 pb-2"></CardFooter>
     </Card>
   );
 }
