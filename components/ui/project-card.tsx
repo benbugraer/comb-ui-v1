@@ -16,11 +16,11 @@ export function ProjectCard({ title, description, tags, image }: Props) {
   return (
     <Card
       className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
+        "flex flex-col bg-tertiary text-primary rounded-xl overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
       }
     >
       {image && (
-        <div className="h-40 w-full overflow-hidden object-cover object-top mb-6">
+        <div className="h-60 w-full overflow-hidden object-cover object-top mb-6">
           <Image
             src={image}
             alt={title}

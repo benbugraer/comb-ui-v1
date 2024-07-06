@@ -39,7 +39,7 @@ export default async function Variant({
         }}
       />
       <h1
-        className="title font-medium uppercase rounded-2xl text-2xl max-w-[650px] animate-in"
+        className="font-medium  rounded-xl p-2 bg-tertiary text-xl inline-block animate-in"
         style={{ "--index": 0 } as CSSProperties}
       >
         {variant.metadata.title}
