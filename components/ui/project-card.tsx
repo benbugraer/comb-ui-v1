@@ -43,7 +43,7 @@ export function ProjectCard({ title, description, tags, image }: Props) {
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag) => (
               <Badge
-                className="px-1 py-0 text-[0.75rem] prose bg-tertiary text-primary"
+                className="px-1 py-0 text-[0.75rem] prose bg-white text-primary"
                 key={tag}
               >
                 {tag}
