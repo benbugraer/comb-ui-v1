@@ -44,7 +44,10 @@ export default async function Recipe({
       >
         {recipe.metadata.title}
       </h1>
-      <p className="text-lg text-tertiary my-6">
+      <p
+        className="text-lg text-tertiary my-6 animate-in"
+        style={{ "--index": 1 } as CSSProperties}
+      >
         {recipe.metadata.description}
       </p>
       <div
@@ -54,7 +57,8 @@ export default async function Recipe({
       ></div>
       <Link
         href="/recipes"
-        className="group mt-12 relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-neutral-950 font-medium text-neutral-200 transition-all duration-300 hover:w-[10rem]"
+        className="group mt-12 relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-neutral-950 font-medium text-neutral-200 transition-all duration-300 hover:w-[10rem] animate-in"
+        style={{ "--index": 3 } as CSSProperties}
       >
         <div className="absolute left-3.5">
           <HiArrowLeft className="w-6 h-6 text-neutral-200" />

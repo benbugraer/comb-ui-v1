@@ -48,6 +48,13 @@ export default function Home() {
               "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]"
             )}
           />
+          <Particles
+            className="absolute inset-0"
+            quantity={400}
+            ease={80}
+            color="#000"
+            refresh
+          />
           <Link
             href="https://github.com/benbugraer"
             target="_blank"
