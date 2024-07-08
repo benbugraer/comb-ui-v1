@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getVariants } from "@/data/variant";
+import { getRecipes } from "@/data/recipes";
 import { CSSProperties } from "react";
-import { Badge } from "@/components/ui/badge";
 
 // export async function generateMetadata({
 //   params,
@@ -12,16 +11,16 @@ import { Badge } from "@/components/ui/badge";
 //   };
 // });
 
-export default async function Variant({
+export default async function Recipe({
   params,
 }: {
   params: {
     slug: string;
   };
 }) {
-  let variant = await getVariants(params.slug);
+  let recipe = await getRecipes(params.slug);
 
-  if (!variant) {
+  if (!recipe) {
     notFound();
   }
 
@@ -32,9 +31,9 @@ export default async function Variant({
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            headline: variant.metadata.title,
-            description: variant.metadata.description,
-            icons: variant.metadata.icons,
+            headline: recipe.metadata.title,
+            description: recipe.metadata.description,
+            icons: recipe.metadata.icons,
           }),
         }}
       />
@@ -42,23 +41,12 @@ export default async function Variant({
         className="font-medium  rounded-xl p-2 bg-tertiary text-xl inline-block animate-in"
         style={{ "--index": 0 } as CSSProperties}
       >
-        {variant.metadata.title}
+        {recipe.metadata.title}
       </h1>
-      <div
-        className="flex s items-center mt-8 mb-8 text-sm gap-4 animate-in"
-        style={{ "--index": 1 } as CSSProperties}
-      >
-        {variant.metadata.tags.map((tag: string) => (
-          <Badge key={tag} variant="outline">
-            {tag}
-          </Badge>
-        ))}
-      </div>
-      <div className="mt-4">{variant.metadata.icons}</div>
       <div
         className="prose dark:prose-invert animate-in"
         style={{ "--index": 2 } as CSSProperties}
-        dangerouslySetInnerHTML={{ __html: variant.source }}
+        dangerouslySetInnerHTML={{ __html: recipe.source }}
       ></div>
     </div>
   );

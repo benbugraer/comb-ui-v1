@@ -15,7 +15,7 @@ import { SiGithub, SiTwitter, SiGmail } from "react-icons/si";
 const links = [
   { label: "Home", href: "/" },
   { label: "Usage", href: "/usage" },
-  { label: "Variants", href: "/variants" },
+  { label: "Recipes", href: "/recipes" },
 ];
 
 const socialMedia = [
@@ -82,7 +82,9 @@ export default function Navigation() {
                   <DropdownMenuRadioGroup asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className={`rounded-md px-4 py-2 transition-colors hover:text-primary ${pathname === link.href ? "bg-tertiary" : "font-normal"}`}
+                      className={`rounded-md px-4 py-2 transition-colors hover:text-primary ${
+                        pathname === link.href ? "bg-tertiary" : "font-normal"
+                      }`}
                     >
                       {link.label}
                     </Link>

@@ -77,7 +77,7 @@ export default function Home() {
             className="mt-6 text-lg leading-8 text-tertiary animate-in"
             style={{ "--index": 3 } as CSSProperties}
           >
-            Go to the Variants page, find the features you want, install the
+            Go to the recipes page, find the features you want, install the
             necessary UI libraries and you&apos;re ready, just copy and paste
             them into your project. Remember you can customize it as you like.
           </p>
@@ -89,7 +89,7 @@ export default function Home() {
               <GrInstall className="w-5 h-5" />
               Installations
             </Button>
-            <Button href="/variants">
+            <Button href="/recipes">
               <IoDocuments className="w-5 h-5" />
               Get Started
             </Button>
