@@ -1,6 +1,6 @@
 ---
 title: "DockWithPreview"
-description: "This variation for your website look better. For this variation created with MagicUI + Aceternity UI"
+description: "This recipe for your website look better. For this recipe created with Magic UI + Aceternity UI."
 image: "/recipes/dockprev.png"
 tags:
   [
@@ -14,7 +14,9 @@ tags:
   ]
 ---
 
-##
+## Code
+
+For this recipe, we used [MagicUI](https://magicui.design/) <a href="https://magicui.design/docs/components/dock" className="text-blue-500">Dock Component</a> and [AceternityUI](https://ui.aceternity.com/) <a href="https://ui.aceternity.com/components/link-preview" className="text-blue-500">Link Preview</a>.
 
 ```tsx
 "use client";
@@ -301,4 +303,32 @@ export const DockWithPreview = ({
 );
 
 export { Dock, DockIcon, dockVariants };
+```
+
+## Usage
+
+Let's jump usage, basically what we are doing here is to import and use the `DockWithPreview` component we created wherever you want to use it in your project, remember that `url` and `icon` are indispensable elements in this recipe. Here is actually an example of how to use it, we use the dockItems content that I created here. For the icon, I preferred [react-icons](https://react-icons.github.io/react-icons/) but you can use any icon library or svg you want.
+
+```tsx
+import { SiReact, SiNextdotjs, SiTailwindcss, SiGithub } from "react-icons/si";
+import { DockWithPreview } from "@/components/DockWithPreview";
+
+export default function DockPreview() {
+  const dockItems = [
+    { url: "https://reactjs.org/", icon: SiReact },
+    { url: "https://nextjs.org/", icon: SiNextdotjs },
+    { url: "https://tailwindcss.com/", icon: SiTailwindcss },
+    { url: "https://github.com/", icon: SiGithub },
+  ];
+
+  return (
+    <div className="flex items-center justify-center mx-auto gap-4 mt-64">
+      {dockItems.map(({ url, icon: Icon }) => (
+        <DockWithPreview url={url} key={url}>
+          <Icon className="w-5 h-5" />
+        </DockWithPreview>
+      ))}
+    </div>
+  );
+}
 ```

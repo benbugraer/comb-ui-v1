@@ -91,6 +91,10 @@
   }
 }
 
+.custom-link {
+  color: var(--blue-11);
+}
+
 .breakout {
   width: calc(100vw - 48px);
   margin-left: calc(50% - 50vw + 36px);
@@ -118,10 +122,14 @@ input:-webkit-autofill:focus {
 @media (hover: hover) {
   .animated-list:hover li {
     opacity: 0.5;
+    transition: all;
+    animation-duration: 400ms;
   }
 
   .animated-list:hover li:hover {
     opacity: 1;
+    transition: all;
+    animation-duration: 400ms;
   }
 }
 .animate-in {
@@ -172,7 +180,7 @@ h3 code {
 }
 
 pre {
-  @apply !px-0 rounded-lg overflow-x-auto py-4;
+  @apply !px-0 rounded-xl border-1 border-black overflow-x-auto py-4;
 }
 
 pre [data-line] {

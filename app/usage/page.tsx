@@ -34,7 +34,7 @@ export default async function UsagesPage() {
           the setups, you can visit the official websites of the UI libraries.{" "}
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+      <ul className="animated-list grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
         {usages.map((usages, id) => (
           <Link
             key={id}
@@ -42,17 +42,17 @@ export default async function UsagesPage() {
             href={`/usage/${usages.slug}`}
             style={{ "--index": 3 } as CSSProperties}
           >
-            <div className="w-full flex flex-col">
+            <li className="w-full flex flex-col">
               <ProjectCard
                 image={usages.metadata.image}
                 title={usages.metadata.title}
                 description={usages.metadata.description}
                 tags={usages.metadata.tags}
               ></ProjectCard>
-            </div>
+            </li>
           </Link>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }
