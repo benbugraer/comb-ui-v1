@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { SiGithub, SiTwitter, SiGmail } from "react-icons/si";
+import { SiGithub, SiX, SiGmail } from "react-icons/si";
 
 const links = [
   { label: "Home", href: "/" },
@@ -25,7 +25,7 @@ const socialMedia = [
   },
   {
     url: "https://x.com/benbugraer",
-    icon: <SiTwitter className="w-4 h-4" />,
+    icon: <SiX className="w-4 h-4" />,
   },
   { url: "mailto:bugraerdev@gmail.com", icon: <SiGmail className="w-4 h-4" /> },
 ];

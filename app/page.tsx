@@ -49,7 +49,7 @@ export default function Home() {
             )}
           />
           <Particles
-            className="absolute inset-0"
+            className="absolute inset-0 animate-in"
             quantity={150}
             ease={80}
             color="#000"
