@@ -13,6 +13,17 @@
 @import "@radix-ui/colors/red-dark.css";
 
 @layer base {
+  .light {
+    --contrast-color: #fff;
+    .prose {
+      --tw-prose-headings: var(--gray-12);
+      --tw-prose-body: var(--gray-12);
+      --tw-prose-bold: var(--gray-12);
+      --tw-prose-links: var(--blue-11);
+      --tw-prose-code: var(--gray-12);
+      --tw-prose-quotes: var(--gray-12);
+    }
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -180,7 +191,7 @@ h3 code {
 }
 
 pre {
-  @apply !px-0 rounded-xl border-1 border-black overflow-x-auto py-4;
+  @apply !px-0 rounded-xl border border-gray-300 overflow-x-auto py-4;
 }
 
 pre [data-line] {
@@ -188,7 +199,7 @@ pre [data-line] {
 }
 
 code {
-  @apply text-sm md:text-base !leading-loose;
+  @apply !text-xs md:text-base !leading-loose;
 }
 
 pre > code {
@@ -205,6 +216,11 @@ code[data-line-numbers] {
   counter-reset: line;
 }
 
+[data-highlighted-line] {
+  background-color: var(--blue-3);
+  border-left: 2px solid var(--blue-10);
+}
+
 code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
@@ -213,6 +229,7 @@ code[data-line-numbers] > [data-line]::before {
 
 code {
   counter-reset: line;
+  min-width: 100%;
 }
 
 code > [data-line]::before {

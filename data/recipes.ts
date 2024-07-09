@@ -7,6 +7,7 @@ import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import matter from "gray-matter";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
+import { transformerNotationDiff } from "@shikijs/transformers";
 
 type Metadata = {
   title: string;
@@ -24,6 +25,7 @@ export async function markdownToHTML(markdown: string) {
     .use(remarkRehype)
     .use(rehypePrettyCode, {
       transformers: [
+        transformerNotationDiff(),
         transformerCopyButton({
           visibility: "hover",
           feedbackDuration: 1500,
