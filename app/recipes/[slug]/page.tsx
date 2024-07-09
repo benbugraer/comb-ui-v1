@@ -57,15 +57,11 @@ export default async function Recipe({
       ></div>
       <Link
         href="/recipes"
-        className="group mt-12 relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-neutral-950 font-medium text-neutral-200 transition-all duration-300 hover:w-[10rem] animate-in"
+        className="flex text-link items-center gap-2 mt-12 hover:text-primary duration-300 ease-in-out transition-colors animate-in"
         style={{ "--index": 3 } as CSSProperties}
       >
-        <div className="absolute left-3.5">
-          <HiArrowLeft className="w-6 h-6 text-neutral-200" />
-        </div>
-        <div className="inline-flex pl-2.5 whitespace-nowrap opacity-0 transition-all duration-500 group-hover:translate-x-3 group-hover:opacity-100">
-          Back to Recipes
-        </div>
+        <HiArrowLeft />
+        <span>Back to recipes</span>
       </Link>
     </div>
   );

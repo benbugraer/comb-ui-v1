@@ -221,8 +221,8 @@ code > [data-line]::before {
 
   /* Other styling */
   display: inline-block;
-  width: 1rem;
-  margin-right: 2rem;
+  width: 0.5rem;
+  margin-right: 1.5rem;
   text-align: right;
   color: gray;
   background-color: var(--primary-foreground);

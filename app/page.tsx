@@ -50,7 +50,7 @@ export default function Home() {
           />
           <Particles
             className="absolute inset-0"
-            quantity={400}
+            quantity={150}
             ease={80}
             color="#000"
             refresh

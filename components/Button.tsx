@@ -4,10 +4,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
-type ButtonProps = {
+interface ButtonProps {
   children: ReactNode;
   href: string;
-};
+}
 
 export default function Button({ children, href }: ButtonProps) {
   return (
