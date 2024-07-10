@@ -4,6 +4,10 @@ import { getRecipes } from "@/data/recipes";
 import { CSSProperties } from "react";
 import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
+import Image from "next/image";
+import { SiNextdotjs, SiReact, SiTailwindcss } from "react-icons/si";
+import { LinkPreview } from "@/components/ui/link-preview";
+import { Dock, DockIcon } from "@/components/ui/dock";
 
 // export async function generateMetadata({
 //   params,
@@ -25,6 +29,12 @@ export default async function Recipe({
   if (!recipe) {
     notFound();
   }
+
+  const dockIcons = [
+    { href: "https://nextjs.org/", icon: SiNextdotjs },
+    { href: "https://react.dev/", icon: SiReact },
+    { href: "https://tailwindcss.com/", icon: SiTailwindcss },
+  ];
 
   return (
     <div className="mx-auto relative max-w-2xl py-[3.25rem] sm:py-[3.1rem] sm:w-1/2 lg:w-3/5 flex-col">
@@ -50,6 +60,24 @@ export default async function Recipe({
       >
         {recipe.metadata.description}
       </p>
+
+      <div
+        className="not-prose relative my-12 gap-4 -ml-6 flex w-[calc(100%+48px)] max-w-none select-none items-center justify-center overflow-clip border-secondary bg-secondary p-6 md:-ml-20 md:w-[calc(100%+160px)] md:rounded-lg md:border"
+        style={{ height: 400 }}
+      >
+        {/* <Image src="/recipes/1.png" width={400} height={400} alt={"dsds"} /> */}
+
+        {dockIcons.map(({ href, icon: Icon }) => (
+          <LinkPreview key={href} url={href}>
+            <Dock>
+              <DockIcon>
+                <Icon aria-label="icons" className="w-5 h-5 " />
+              </DockIcon>
+            </Dock>
+          </LinkPreview>
+        ))}
+      </div>
+
       <div
         className="prose dark:prose-invert animate-in"
         style={{ "--index": 2 } as CSSProperties}

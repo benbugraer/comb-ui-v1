@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { SiGithub, SiX, SiGmail } from "react-icons/si";
+import { SiGithub, SiX, SiGmail, SiLinkedin } from "react-icons/si";
 
 const links = [
   { label: "Home", href: "/" },
@@ -21,13 +21,20 @@ const links = [
 const socialMedia = [
   {
     url: "https://github.com/benbugraer",
-    icon: <SiGithub className="w-4 h-4" />,
+    icon: <SiGithub className="w-4 h-4 text-[#000000]" />,
   },
   {
     url: "https://x.com/benbugraer",
-    icon: <SiX className="w-4 h-4" />,
+    icon: <SiX className="w-4 h-4 text-[#000000]" />,
   },
-  { url: "mailto:bugraerdev@gmail.com", icon: <SiGmail className="w-4 h-4" /> },
+  // {
+  //   url: "mailto:bugraerdev@gmail.com",
+  //   icon: <SiGmail className="w-4 h-4 text-[#EA4335]" />,
+  // },
+  {
+    url: "https://www.linkedin.com/feed/",
+    icon: <SiLinkedin className="w-4 h-4 text-[#0A66C2]" />,
+  },
 ];
 
 export default function Navigation() {
