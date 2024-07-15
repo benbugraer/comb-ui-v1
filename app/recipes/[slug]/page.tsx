@@ -5,6 +5,7 @@ import { CSSProperties } from "react";
 import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
 import Image from "next/image";
+import ShineBorder from "@/components/ui/shine-border";
 
 // export async function generateMetadata({
 //   params,
@@ -52,9 +53,9 @@ export default async function Recipe({
         {recipe.metadata.description}
       </p>
 
-      <div
+      <ShineBorder
         className="not-prose h-[25rem] relative my-12 gap-4 -ml-6 flex w-[calc(100%+48px)] max-w-none select-none items-center justify-center overflow-clip border-secondary bg-secondary p-6 md:-ml-20 md:w-[calc(100%+160px)] md:rounded-lg md:border animate-in"
-        style={{ "--index": 2 } as CSSProperties}
+        color={["#ccc", "#c1c1", "#000"]}
       >
         <Image
           src={recipe.metadata.previewImage}
@@ -62,7 +63,7 @@ export default async function Recipe({
           height={400}
           alt={"dsds"}
         />
-      </div>
+      </ShineBorder>
 
       <div
         className="prose dark:prose-invert animate-in"
