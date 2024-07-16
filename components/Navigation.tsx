@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { SiGithub, SiX, SiGmail, SiLinkedin } from "react-icons/si";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const links = [
   { label: "Home", href: "/" },
@@ -21,11 +22,11 @@ const links = [
 const socialMedia = [
   {
     url: "https://github.com/benbugraer",
-    icon: <SiGithub className="w-4 h-4 text-[#000000]" />,
+    icon: <SiGithub className="w-4 h-4 " />,
   },
   {
     url: "https://x.com/benbugraer",
-    icon: <SiX className="w-4 h-4 text-[#000000]" />,
+    icon: <SiX className="w-4 h-4 " />,
   },
   // {
   //   url: "mailto:bugraerdev@gmail.com",
@@ -33,7 +34,7 @@ const socialMedia = [
   // },
   {
     url: "https://www.linkedin.com/feed/",
-    icon: <SiLinkedin className="w-4 h-4 text-[#0A66C2]" />,
+    icon: <SiLinkedin className="w-4 h-4 " />,
   },
 ];
 
@@ -42,7 +43,7 @@ export default function Navigation() {
 
   return (
     <header
-      className="bg-white bg-opacity-30  top-0 sticky z-40 w-full backdrop-blur-xl animate-in"
+      className="bg-white dark:bg-contrast text-primary bg-opacity-30  top-0 sticky z-40 w-full backdrop-blur-xl animate-in"
       style={{ "--index": 0 } as CSSProperties}
     >
       <div className="container flex h-16 items-center">
@@ -61,7 +62,7 @@ export default function Navigation() {
             ))}
           </ul>
         </nav>
-        <nav className="flex items-center gap-1 justify-end ml-auto">
+        <nav className="flex text-white items-center gap-1 justify-end ml-auto">
           {socialMedia.map((social) => (
             <a
               target="_blank"
@@ -72,6 +73,7 @@ export default function Navigation() {
               {social.icon}
             </a>
           ))}
+          <ThemeSwitcher />
         </nav>
         <div className="relative md:hidden ml-5">
           <DropdownMenu>
@@ -80,7 +82,7 @@ export default function Navigation() {
                 aria-label="Menu Button"
                 className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary focus:outline-none"
               >
-                <HiMenuAlt3 className="h-6 w-6 cursor-pointer text-black" />
+                <HiMenuAlt3 className="h-6 w-6 cursor-pointer text-primary" />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-40 origin-top-right mr-4 rounded-xl bg-secondary p-2 text-base shadow-md focus:outline-none sm:text-sm">

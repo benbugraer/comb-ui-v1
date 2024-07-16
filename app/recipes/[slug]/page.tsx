@@ -53,17 +53,7 @@ export default async function Recipe({
         {recipe.metadata.description}
       </p>
 
-      <ShineBorder
-        className="not-prose h-[25rem] relative my-12 gap-4 -ml-6 flex w-[calc(100%+48px)] max-w-none select-none items-center justify-center overflow-clip border-secondary bg-secondary p-6 md:-ml-20 md:w-[calc(100%+160px)] md:rounded-lg md:border animate-in"
-        color={["#ccc", "#c1c1", "#000"]}
-      >
-        <Image
-          src={recipe.metadata.previewImage}
-          width={400}
-          height={400}
-          alt={"dsds"}
-        />
-      </ShineBorder>
+      <div className="not-prose h-[25rem] relative my-12 gap-4 -ml-6 flex w-[calc(100%+48px)] max-w-none select-none items-center justify-center overflow-clip border-secondary bg-secondary p-6 md:-ml-20 md:w-[calc(100%+160px)] md:rounded-lg md:border animate-in"></div>
 
       <div
         className="prose dark:prose-invert animate-in"
