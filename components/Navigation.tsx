@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { SiGithub, SiX, SiGmail, SiLinkedin } from "react-icons/si";
-import ThemeSwitcher from "./ThemeSwitcher";
 
 const links = [
   { label: "Home", href: "/" },
@@ -73,7 +72,6 @@ export default function Navigation() {
               {social.icon}
             </a>
           ))}
-          <ThemeSwitcher />
         </nav>
         <div className="relative md:hidden ml-5">
           <DropdownMenu>

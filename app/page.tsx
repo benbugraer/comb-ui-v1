@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="mx-auto bg-contrast relative max-w-4xl py-[3.25rem] sm:py-[6.1rem] sm:w-1/2 lg:w-3/5 flex-col overflow-hidden">
+      <div className="mx-auto bg-contrast relative max-w-4xl py-[3.25rem] sm:py-[6.1rem] sm:w-1/2 lg:w-3/5 flex-col">
         <div className="text-center">
           <GridPattern
             width={45}
