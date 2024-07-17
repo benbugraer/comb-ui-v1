@@ -10,9 +10,6 @@ import { Dock, DockIcon } from "@/components/ui/dock";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import {
   SiShadcnui,
-  SiRadixui,
-  SiNextui,
-  SiHeadlessui,
   SiNextdotjs,
   SiReact,
   SiTailwindcss,

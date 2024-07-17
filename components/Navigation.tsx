@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { SiGithub, SiX, SiGmail, SiLinkedin } from "react-icons/si";
+import { LogosGoogleGmail } from "@/public/icon/gmail";
 
 const links = [
   { label: "Home", href: "/" },
@@ -21,19 +22,19 @@ const links = [
 const socialMedia = [
   {
     url: "https://github.com/benbugraer",
-    icon: <SiGithub className="w-4 h-4 " />,
+    icon: <SiGithub className="w-4 h-4 text-[#000000]" />,
   },
   {
     url: "https://x.com/benbugraer",
-    icon: <SiX className="w-4 h-4 " />,
+    icon: <SiX className="w-4 h-4 text-[#000000]" />,
   },
-  // {
-  //   url: "mailto:bugraerdev@gmail.com",
-  //   icon: <SiGmail className="w-4 h-4 text-[#EA4335]" />,
-  // },
   {
     url: "https://www.linkedin.com/feed/",
-    icon: <SiLinkedin className="w-4 h-4 " />,
+    icon: <SiLinkedin className="w-4 h-4 text-[#0077B5]" />,
+  },
+  {
+    url: "mailto:bugraerdev@gmail.com",
+    icon: <LogosGoogleGmail className="w-4 h-4" />,
   },
 ];
 
@@ -83,7 +84,7 @@ export default function Navigation() {
                 <HiMenuAlt3 className="h-6 w-6 cursor-pointer text-primary" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-40 origin-top-right mr-4 rounded-xl bg-secondary p-2 text-base shadow-md focus:outline-none sm:text-sm">
+            <DropdownMenuContent className="w-30 origin-top-right mr-8 rounded-xl bg-secondary p-2  shadow-md focus:outline-none text-sm">
               <div className="grid">
                 {links.map((link) => (
                   <DropdownMenuRadioGroup asChild key={link.href}>
