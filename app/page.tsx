@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="mx-auto bg-contrast relative max-w-4xl py-[3.25rem] sm:py-[6.1rem] sm:w-1/2 lg:w-3/5 flex-col">
+      <div className="mx-auto relative max-w-4xl py-[3.25rem] sm:py-[6.1rem] sm:w-1/2 lg:w-3/5 flex-col">
         <div className="text-center">
           <GridPattern
             width={45}
@@ -55,13 +55,13 @@ export default function Home() {
           <Link
             href="https://github.com/benbugraer"
             target="_blank"
-            className="z-10 inline-block mb-[3.3rem] -mt-0.5 items-center justify-center animate-in"
+            className="z-10  inline-block mb-[3.3rem] -mt-0.5 items-center justify-center animate-in"
             style={{ "--index": 1 } as CSSProperties}
           >
             <AnimatedGradientText>
               <span
                 className={cn(
-                  `inline animate-gradient font-light bg-gradient-to-r from-[#111] via-[#ccc] to-[#111] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+                  `inline font-light bg-gradient-to-r from-[#111] via-[#ccc] to-[#111] dark:from-[#ccc] dark:via-[#111] dark:to-[#ccc] bg-[length:var(--bg-size)_100%]  bg-clip-text text-transparent`
                 )}
               >
                 Created By{" "}
