@@ -18,7 +18,7 @@ import { FaWandMagicSparkles } from "react-icons/fa6";
 import GridPattern from "@/components/ui/grid-pattern";
 import { LinkPreview } from "@/components/ui/link-preview";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
-import AceternityLogo from "@/components/AceternityLogo";
+import AceternityLogo from "@/public/icon/AceternityLogo";
 
 export default function Home() {
   const dockIcons = [

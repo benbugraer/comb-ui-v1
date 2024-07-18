@@ -12,6 +12,7 @@ import {
 import { HiMenuAlt3 } from "react-icons/hi";
 import { SiGithub, SiX, SiGmail, SiLinkedin } from "react-icons/si";
 import { LogosGoogleGmail } from "@/public/icon/gmail";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const links = [
   { label: "Home", href: "/" },
@@ -22,11 +23,11 @@ const links = [
 const socialMedia = [
   {
     url: "https://github.com/benbugraer",
-    icon: <SiGithub className="w-4 h-4 text-[#000000]" />,
+    icon: <SiGithub className="w-4 h-4 text-[#000000] dark:text-white" />,
   },
   {
     url: "https://x.com/benbugraer",
-    icon: <SiX className="w-4 h-4 text-[#000000]" />,
+    icon: <SiX className="w-4 h-4 text-[#000000] dark:text-white" />,
   },
   {
     url: "https://www.linkedin.com/feed/",
@@ -73,6 +74,7 @@ export default function Navigation() {
               {social.icon}
             </a>
           ))}
+          <ThemeSwitcher />
         </nav>
         <div className="relative md:hidden ml-5">
           <DropdownMenu>
@@ -103,7 +105,7 @@ export default function Navigation() {
           </DropdownMenu>
         </div>
       </div>
-      <hr className="m-0 h-px w-full border-none bg-neutral-200/90"></hr>
+      <hr className="m-0 h-px w-full border-none bg-gradient-to-r from-neutral-200/0 via-neutral-200/30 to-neutral-200/0"></hr>
     </header>
   );
 }
