@@ -61,7 +61,7 @@ export default function Home() {
             <AnimatedGradientText>
               <span
                 className={cn(
-                  `inline font-light bg-gradient-to-r from-[#111] via-[#ccc] to-[#111] dark:from-[#ccc] dark:via-[#111] dark:to-[#ccc] bg-[length:var(--bg-size)_100%]  bg-clip-text text-transparent`
+                  `inline  font-light bg-gradient-to-r from-[#111] via-[#ccc] to-[#111]  bg-[length:var(--bg-size)_100%]  bg-clip-text text-transparent`
                 )}
               >
                 Created By{" "}

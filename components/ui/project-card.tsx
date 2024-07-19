@@ -16,7 +16,7 @@ export function ProjectCard({ title, description, tags, image }: Props) {
   return (
     <Card
       className={
-        "flex flex-col bg-tertiary text-primary rounded-xl overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
+        "flex flex-col bg-tertiary text-primary rounded-xl overflow-hidden border hover:shadow-lg dark:shadow-gray-500/50 transition-all duration-300 ease-out h-full"
       }
     >
       {image && (
@@ -43,7 +43,7 @@ export function ProjectCard({ title, description, tags, image }: Props) {
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag) => (
               <Badge
-                className="px-1 py-0 text-[0.75rem] prose bg-white text-tertiary"
+                className="px-1 py-0 text-[0.75rem]  bg-primary text-black dark:text-white"
                 key={tag}
               >
                 {tag}

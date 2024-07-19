@@ -16,11 +16,11 @@ export default async function RecipesPage() {
   return (
     <section className="mx-auto relative max-w-4xl py-[3.25rem] sm:py-[2.1rem] sm:w-1/2 lg:w-3/5 flex-col space-y-12">
       <div
-        className="relative flex-row text-center h-full w-full max-w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-16 mb-24 md:shadow-xl animate-in"
+        className="relative bg-tertiary flex-row text-center h-full w-full max-w-full items-center justify-center overflow-hidden rounded-lg border p-16 mb-24 md:shadow-xl animate-in"
         style={{ "--index": 0 } as CSSProperties}
       >
         <h1
-          className="z-10 uppercase whitespace-pre-wrap text-center text-3xl font-medium tracking-tighter text-black dark:text-white animate-in"
+          className="z-10 uppercase whitespace-pre-wrap text-center text-3xl font-medium tracking-tighter animate-in"
           style={{ "--index": 1 } as CSSProperties}
         >
           Recipes
