@@ -10,8 +10,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { SiGithub, SiX, SiGmail, SiLinkedin } from "react-icons/si";
+import { SiGithub, SiX, SiLinkedin } from "react-icons/si";
 import { LogosGoogleGmail } from "@/public/icon/gmail";
+import GitHubStar from "./GitHubStar";
 
 const links = [
   { label: "Home", href: "/" },
@@ -62,7 +63,8 @@ export default function Navigation() {
             ))}
           </ul>
         </nav>
-        <nav className="flex text-white items-center gap-1 justify-end ml-auto">
+        <nav className="flex  items-center gap-1 justify-end ml-auto">
+          <GitHubStar />
           {socialMedia.map((social) => (
             <a
               target="_blank"
