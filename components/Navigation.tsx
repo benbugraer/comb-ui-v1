@@ -22,12 +22,12 @@ const links = [
 
 const socialMedia = [
   {
-    url: "https://github.com/benbugraer",
-    icon: <SiGithub className="w-4 h-4 text-[#000000] dark:text-white" />,
-  },
-  {
     url: "https://x.com/benbugraer",
     icon: <SiX className="w-4 h-4 text-[#000000] dark:text-white" />,
+  },
+  {
+    url: "https://github.com/benbugraer",
+    icon: <SiGithub className="w-4 h-4 text-[#000000] dark:text-white" />,
   },
   {
     url: "https://www.linkedin.com/feed/",
