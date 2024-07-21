@@ -3,6 +3,7 @@ import Link from "next/link";
 import NavLinks from "./NavLinks";
 import { CSSProperties } from "react";
 import { usePathname } from "next/navigation";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -70,11 +71,12 @@ export default function Navigation() {
               target="_blank"
               key={social.url}
               href={social.url}
-              className="inline-flex text-tertiary items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9"
+              className="inline-flex text-tertiary items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-tertiary duration-500 hover:duration-500 hover:text-accent-foreground h-9 py-2 w-9"
             >
               {social.icon}
             </a>
           ))}
+          <ThemeSwitcher />
         </nav>
         <div className="relative md:hidden ml-5">
           <DropdownMenu>

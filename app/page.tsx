@@ -42,7 +42,7 @@ export default function Home() {
             y={-1}
             strokeDasharray={"4 2"}
             className={cn(
-              "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]"
+              "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]",
             )}
           />
           <Particles
@@ -61,11 +61,13 @@ export default function Home() {
             <AnimatedGradientText>
               <span
                 className={cn(
-                  `inline  font-light bg-gradient-to-r from-[#111] via-[#ccc] to-[#111]  bg-[length:var(--bg-size)_100%]  bg-clip-text text-transparent`
+                  `inline dark:text-white font-light bg-gradient-to-r from-[#111] via-[#ccc] to-[#111]  bg-[length:var(--bg-size)_100%]  bg-clip-text text-transparent`,
                 )}
               >
                 Created By{" "}
-                <span className=" uppercase font-bold">bugra er</span>
+                <span className=" uppercase font-bold dark:text-primary">
+                  bugra er
+                </span>
               </span>
               <IoMdArrowRoundForward className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedGradientText>
