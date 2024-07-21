@@ -31,7 +31,11 @@ export async function markdownToHTML(markdown: string) {
           feedbackDuration: 1500,
         }),
       ],
-      theme: "one-light",
+      theme: {
+        dark: "one-dark-pro",
+        light: "one-light",
+      },
+      keepBackground: false,
       filterMetaString: (string) => string.replace(/filename="[^"]*"/, ""),
     })
     .use(rehypeStringify)
@@ -63,7 +67,7 @@ async function getAllRecipes(dir: string) {
         slug,
         source,
       };
-    })
+    }),
   );
 }
 
