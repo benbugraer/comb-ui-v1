@@ -1,6 +1,6 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./card";
+import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import Image from "next/image";
 import Markdown from "react-markdown";
 
@@ -43,7 +43,7 @@ export function ProjectCard({ title, description, tags, image }: Props) {
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag) => (
               <Badge
-                className="px-1 py-0 text-[0.75rem]  bg-secondary text-black dark:text-secondary"
+                className="px-1 py-0 text-[0.75rem]  bg-secondary text-black"
                 key={tag}
               >
                 {tag}

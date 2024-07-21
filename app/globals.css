@@ -54,17 +54,6 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
-    --shiki-light: #f5f5f5;
-    --shiki-light-bg: #f5f5f5;
-
-    [data-theme="dark"] {
-      --shiki-dark: #282c34;
-      --shiki-dark-bg: #282c34;
-    }
-
-    --blue-5-light: #e0f2fe; /* Lighter blue for light theme */
-    --blue-10-light: #0a84ff;
   }
 
   .dark {
@@ -165,8 +154,6 @@ input:-webkit-autofill:focus {
 }
 
 /* blog prose styles overrides */
-
-
 .prose hr {
   @apply border-primary;
 }
@@ -184,45 +171,20 @@ input:-webkit-autofill:focus {
 }
 
 .prose p code {
-  @apply whitespace-pre-line rounded border border-primary px-1 font-normal text-primary;
+  @apply whitespace-pre-line rounded border border-primary bg-primary px-1 font-normal text-primary;
 }
 
-.prose {
-  --tw-prose-body: var(--foreground);
-  --tw-prose-headings: var(--foreground);
-  --tw-prose-links: var(--primary);
-  --tw-prose-bold: var(--foreground);
-  --tw-prose-counters: var(--foreground);
-  --tw-prose-bullets: var(--foreground);
-  --tw-prose-hr: var(--border);
-  --tw-prose-quotes: var(--foreground);
-  --tw-prose-quote-borders: var(--border);
-  --tw-prose-captions: var(--muted-foreground);
-  --tw-prose-code: var(--foreground);
-  --tw-prose-pre-code: var(--foreground);
-  --tw-prose-pre-bg: var(--secondary);
-  --tw-prose-th-borders: var(--border);
-  --tw-prose-td-borders: var(--border);
-}
-
-.dark .prose {
-  --tw-prose-body: var(--foreground);
-  --tw-prose-headings: var(--foreground);
-  --tw-prose-links: var(--primary);
-  --tw-prose-bold: var(--foreground);
-  --tw-prose-counters: var(--foreground);
-  --tw-prose-bullets: var(--foreground);
-  --tw-prose-hr: var(--border);
-  --tw-prose-quotes: var(--foreground);
-  --tw-prose-quote-borders: var(--border);
-  --tw-prose-captions: var(--muted-foreground);
-  --tw-prose-code: var(--foreground);
-  --tw-prose-pre-code: var(--foreground);
-  --tw-prose-pre-bg: var(--secondary);
-  --tw-prose-th-borders: var(--border);
-  --tw-prose-td-borders: var(--border);
-  --blue-5-dark: #23395d; /* Darker blue for dark theme */
-  --blue-10-dark: #112d4e;
+.prose
+  p
+  :where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::before,
+.prose
+  p
+  :where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::after {
+  content: "";
 }
 
 h3 code {
@@ -251,22 +213,13 @@ code[data-theme*=" "] span {
   background-color: var(--shiki-light-bg);
 }
 
-@media (prefers-color-scheme: dark) {
-  code[data-theme*=" "],
-  code[data-theme*=" "] span {
-    color: var(--shiki-dark);
-    background-color: var(--shiki-dark-bg);
-  }
-}
-
 code[data-line-numbers] {
   counter-reset: line;
 }
 
-
 [data-highlighted-line] {
-  background-color: var(--blue-5, #e0f2fe); /* Fallback color */
-  border-left: 2px solid var(--blue-10, #0a84ff); /* Fallback color */
+  background-color: var(--blue-3);
+  border-left: 2px solid var(--blue-10);
 }
 
 code[data-line-numbers] > [data-line]::before {
