@@ -313,7 +313,7 @@ export { Dock, DockIcon, dockVariants };
 
 Let's jump usage, basically what we are doing here is to import and use the `DockWithPreview` component we created wherever you want to use it in your project, remember that `url` and `icon` are indispensable elements in this recipe. Here is actually an example of how to use it, we use the dockItems content that I created here. For the icon, I preferred [react-icons](https://react-icons.github.io/react-icons/) but you can use any icon library or svg you want.
 
-```tsx
+```tsx {5-9}
 import { SiReact, SiNextdotjs, SiTailwindcss, SiGithub } from "react-icons/si";
 import { DockWithPreview } from "@/components/DockWithPreview";
 

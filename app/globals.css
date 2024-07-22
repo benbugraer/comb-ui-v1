@@ -209,18 +209,18 @@ input:-webkit-autofill:focus {
   --tw-prose-td-borders: var(--border);
 }
 
-/*.prose*/
-/*  p*/
-/*  :where(code):not(*/
-/*    :where([class~="not-prose"], [class~="not-prose"] *)*/
-/*  )::before,*/
-/*.prose*/
-/*  p*/
-/*  :where(code):not(*/
-/*    :where([class~="not-prose"], [class~="not-prose"] *)*/
-/*  )::after {*/
-/*  content: "";*/
-/*}*/
+.prose
+  p
+  :where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::before,
+.prose
+  p
+  :where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::after {
+  content: "";
+}
 
 h3 code {
   @apply !text-lg md:!text-xl;
@@ -249,7 +249,6 @@ pre > code {
 .prose code {
   background-color: var(--secondary);
   color: var(--foreground);
-  padding: 0.2em 0.4em;
   border-radius: 3px;
 }
 
@@ -274,6 +273,7 @@ code[data-line-numbers] {
 [data-highlighted-line] {
   background-color: var(--blue-3);
   border-left: 2px solid var(--blue-10);
+  width: 100%;
 }
 
 code[data-line-numbers] > [data-line]::before {
