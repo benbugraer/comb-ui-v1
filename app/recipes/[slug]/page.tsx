@@ -6,6 +6,8 @@ import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
 import Image from "next/image";
 import ShineBorder from "@/components/ui/shine-border";
+import { useMDXComponents } from "../../mdx-components";
+import { MDXProvider } from "@mdx-js/react";
 
 // export async function generateMetadata({
 //   params,

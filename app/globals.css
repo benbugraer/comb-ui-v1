@@ -170,9 +170,6 @@ input:-webkit-autofill:focus {
   @apply mb-2 mt-[48px] text-base;
 }
 
-.prose p code {
-  @apply whitespace-pre-line rounded border border-primary bg-primary px-1 font-normal text-primary;
-}
 .prose {
   --tw-prose-body: var(--foreground);
   --tw-prose-headings: var(--foreground);
@@ -209,25 +206,12 @@ input:-webkit-autofill:focus {
   --tw-prose-td-borders: var(--border);
 }
 
-.prose
-  p
-  :where(code):not(
-    :where([class~="not-prose"], [class~="not-prose"] *)
-  )::before,
-.prose
-  p
-  :where(code):not(
-    :where([class~="not-prose"], [class~="not-prose"] *)
-  )::after {
-  content: "";
-}
-
 h3 code {
   @apply !text-lg md:!text-xl;
 }
 
 pre {
-  @apply !px-0 rounded-xl border border-gray-300 overflow-x-auto py-4;
+  @apply !px-0 rounded-xl border border-gray-300 dark:border-gray-600 overflow-x-auto py-4;
 }
 
 pre [data-line] {
@@ -240,16 +224,6 @@ code {
 
 pre > code {
   counter-reset: line;
-}
-.prose pre {
-  background-color: var(--secondary);
-  color: var(--foreground);
-}
-
-.prose code {
-  background-color: var(--secondary);
-  color: var(--foreground);
-  border-radius: 3px;
 }
 
 code[data-theme*=" "],
