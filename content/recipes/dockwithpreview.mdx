@@ -309,6 +309,23 @@ export const DockWithPreview = ({
 export { Dock, DockIcon, dockVariants };
 ```
 
+## Update Your Next.JS File
+
+For this case u can update your `next.config.mjs` file like this.
+
+```js {5}
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: [
+      "api.microlink.io", // Microlink Image Preview
+    ],
+  },
+};
+
+export default nextConfig;
+```
+
 ## Usage
 
 Let's jump usage, basically what we are doing here is to import and use the `DockWithPreview` component we created wherever you want to use it in your project, remember that `url` and `icon` are indispensable elements in this recipe. Here is actually an example of how to use it, we use the dockItems content that I created here. For the icon, I preferred [react-icons](https://react-icons.github.io/react-icons/) but you can use any icon library or svg you want.
