@@ -107,7 +107,7 @@ export default function Navigation() {
           </DropdownMenu>
         </div>
       </div>
-      <hr className="m-0 h-px w-full border-none bg-gray-200/50"></hr>
+      <hr className="m-0 h-px w-full border-none bg-gradient-to-r from-neutral-200/0 via-neutral-200/30 to-neutral-200/0"></hr>
     </header>
   );
 }
