@@ -7,4 +7,3 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     DockPreview,
   };
 }
-q;
