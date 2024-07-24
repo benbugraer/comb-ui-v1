@@ -14,28 +14,25 @@ tags:
   ]
 ---
 
-
-
-The essentials for this recipe are MagicUI [Dock Component](https://magicui.design/docs/components/dock) and AceternityUI [Link Preview](https://ui.aceternity.com/components/link-preview).
+ With This recipe, you can create a dock with a preview for your website. This recipe created with Magic UI + Aceternity UI. You can use this recipe in your project to make your website look better.
 
 ## Dependencies
 
+- [MagicUI](https://magicui.design/) - [Dock Component](https://magicui.design/docs/components/dock)
+- [AceternityUI](https://ui.aceternity.com/) - [Link Preview](https://ui.aceternity.com/components/link-preview)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Radix UI Hover Card](https://www.radix-ui.com/primitives/docs/components/hover-card)
 
 
 ## Code
-```tsx {4}
-"use client";
+You only need to create a new file named `DockWithPreview.tsx` in the `components/ui` folder. Then you can copy and paste the code below into the file you created.
 
-import React, { useState, useEffect, useRef, forwardRef } from "react";
+```tsx caption="components/ui/DockWithPreview.tsx"
+"use client";
+import React, { useRef } from "react";
 import { cva } from "class-variance-authority";
 import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-  AnimatePresence,
+  motion, useMotionValue, useSpring, useTransform
 } from "framer-motion";
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 import Image from "next/image";
@@ -43,57 +40,43 @@ import { encode } from "qss";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-const DEFAULT_MAGNIFICATION = 60,
-  DEFAULT_DISTANCE = 140;
+const dockVariants = cva(`
+  mx-auto w-max mt-8 h-[58px] p-2 flex items-end gap-2
+  rounded-full border dark:border-[#707070]
+`);
 
-const dockVariants = cva(
-  "mx-auto w-max mt-8 h-[58px] p-2 flex items-end gap-2 rounded-full border dark:border-[#707070]"
-);
-
-const Dock = forwardRef(
-  (
-    {
-      className,
-      children,
-      magnification = DEFAULT_MAGNIFICATION,
-      distance = DEFAULT_DISTANCE,
-      ...props
-    },
-    ref
-  ) => {
-    const mouseX = useMotionValue(Infinity);
-    return (
-      <motion.div
-        ref={ref}
-        onMouseMove={(e) => mouseX.set(e.pageX)}
-        onMouseLeave={() => mouseX.set(Infinity)}
-        {...props}
-        className={cn(dockVariants(), className)}
-      >
-        {React.Children.map(children, (child) =>
-          React.cloneElement(child, { mouseX, magnification, distance })
-        )}
-      </motion.div>
-    );
-  }
-);
-Dock.displayName = "Dock";
+const Dock = React.forwardRef(({
+  className, children, magnification = 60, distance = 140, ...props
+}, ref) => {
+  const mouseX = useMotionValue(Infinity);
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={(e) => mouseX.set(e.pageX)}
+      onMouseLeave={() => mouseX.set(Infinity)}
+      {...props}
+      className={cn(dockVariants(), className)}
+    >
+      {React.Children.map(children, (child) =>
+        React.cloneElement(child, { mouseX, magnification, distance })
+      )}
+    </motion.div>
+  );
+});
 
 const DockIcon = ({
-  magnification = DEFAULT_MAGNIFICATION,
-  distance = DEFAULT_DISTANCE,
+  magnification = 60,
+  distance = 140,
   mouseX,
   className,
   children,
   ...props
 }) => {
   const ref = useRef(null);
-  const distanceCalc = useTransform(
-    mouseX,
-    (val) =>
-      val -
-      (ref.current?.getBoundingClientRect().x ?? 0) -
-      (ref.current?.getBoundingClientRect().width ?? 0) / 2
+  const distanceCalc = useTransform(mouseX, (val) =>
+    val -
+    (ref.current?.getBoundingClientRect().x ?? 0) -
+    (ref.current?.getBoundingClientRect().width ?? 0) / 2
   );
   const widthSync = useTransform(
     distanceCalc,
@@ -103,7 +86,7 @@ const DockIcon = ({
   const width = useSpring(widthSync, {
     mass: 0.1,
     stiffness: 150,
-    damping: 12,
+    damping: 12
   });
   return (
     <motion.div
@@ -119,18 +102,10 @@ const DockIcon = ({
     </motion.div>
   );
 };
-DockIcon.displayName = "DockIcon";
 
 const LinkPreview = ({
-  children,
-  url,
-  className,
-  width = 200,
-  height = 125,
-  quality = 50,
-  layout = "fixed",
-  isStatic = false,
-  imageSrc = "",
+  children, url, className, width = 200, height = 125,
+  quality = 50, layout = "fixed", isStatic = false, imageSrc = ""
 }) => {
   const src = isStatic
     ? imageSrc
@@ -145,25 +120,25 @@ const LinkPreview = ({
         "viewport.width": width * 3,
         "viewport.height": height * 3,
       })}`;
-  const [isOpen, setOpen] = useState(false),
-    [isMounted, setIsMounted] = useState(false);
-  useEffect(() => setIsMounted(true), []);
-
-  const springConfig = { stiffness: 100, damping: 15 };
-  const x = useMotionValue(0),
-    translateX = useSpring(x, springConfig);
-  const handleMouseMove = (e) =>
-    x.set(
-      (e.clientX -
-        e.target.getBoundingClientRect().left -
-        e.target.getBoundingClientRect().width / 2) /
-        2
-    );
 
   return (
-    <>
-      {isMounted && (
-        <div className="hidden">
+    <HoverCardPrimitive.Root openDelay={50} closeDelay={100}>
+      <HoverCardPrimitive.Trigger
+        className={cn("text-black dark:text-white", className)}
+        href={url}
+      >
+        {children}
+      </HoverCardPrimitive.Trigger>
+      <HoverCardPrimitive.Content
+        side="bottom"
+        align="center"
+        sideOffset={10}
+      >
+        <Link
+          href={url}
+          className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
+          style={{ fontSize: 0 }}
+        >
           <Image
             src={src}
             width={width}
@@ -171,64 +146,12 @@ const LinkPreview = ({
             quality={quality}
             layout={layout}
             priority
-            alt="hidden image"
+            className="rounded-lg"
+            alt="preview image"
           />
-        </div>
-      )}
-      <HoverCardPrimitive.Root
-        openDelay={50}
-        closeDelay={100}
-        onOpenChange={setOpen}
-      >
-        <HoverCardPrimitive.Trigger
-          onMouseMove={handleMouseMove}
-          className={cn("text-black dark:text-white", className)}
-          href={url}
-        >
-          {children}
-        </HoverCardPrimitive.Trigger>
-        <HoverCardPrimitive.Content
-          className="[transform-origin:var(--radix-hover-card-content-transform-origin)]"
-          side="bottom"
-          align="center"
-          sideOffset={10}
-        >
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: 20, scale: 0.6 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  transition: { type: "spring", stiffness: 260, damping: 20 },
-                }}
-                exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                className="shadow-xl rounded-xl"
-                style={{ x: translateX }}
-              >
-                <Link
-                  href={url}
-                  className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
-                  style={{ fontSize: 0 }}
-                >
-                  <Image
-                    src={isStatic ? imageSrc : src}
-                    width={width}
-                    height={height}
-                    quality={quality}
-                    layout={layout}
-                    priority
-                    className="rounded-lg"
-                    alt="preview image"
-                  />
-                </Link>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </HoverCardPrimitive.Content>
-      </HoverCardPrimitive.Root>
-    </>
+        </Link>
+      </HoverCardPrimitive.Content>
+    </HoverCardPrimitive.Root>
   );
 };
 
@@ -247,7 +170,7 @@ export { Dock, DockIcon, DockWithPreview, dockVariants };
 
 For this case u can update your `next.config.mjs` file like this.
 
-```js {5}
+```js {5} caption="next.config.mjs"
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -264,7 +187,7 @@ export default nextConfig;
 
 Let's jump usage, basically what we are doing here is to import and use the `DockWithPreview` component we created wherever you want to use it in your project, remember that `url` and `icon` are indispensable elements in this recipe. Here is actually an example of how to use it, we use the dockItems content that I created here. For the icon, I preferred [react-icons](https://react-icons.github.io/react-icons/) but you can use any icon library or svg you want.
 
-```tsx {5-9}
+```tsx {15} caption="YourPage.tsx"
 import { SiReact, SiNextdotjs, SiTailwindcss, SiGithub } from "react-icons/si";
 import { DockWithPreview } from "@/components/DockWithPreview";
 

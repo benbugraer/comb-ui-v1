@@ -135,7 +135,7 @@ input:-webkit-autofill:focus {
 }
 
 .prose hr {
-    @apply border-primary;
+    @apply border-t-2 border-primary my-8;
 }
 
 .prose blockquote {
@@ -143,7 +143,7 @@ input:-webkit-autofill:focus {
 }
 
 .prose figcaption {
-    @apply mx-auto mb-8 mt-2 max-w-md text-center text-sm text-tertiary;
+    @apply mx-auto mb-8 w-max py-1 px-1.5 border border-primary rounded text-tertiary bg-primary text-center text-sm;
 }
 
 .prose h3 {
@@ -155,15 +155,37 @@ h3 code {
 }
 
 pre {
-    @apply !px-0 rounded-xl border border-gray-300 dark:border-gray-600 overflow-x-auto py-4;
+    @apply !px-0 rounded-xl  border border-primary overflow-x-auto py-4;
+}
+
+pre[class*="language-"] {
+    @apply rounded-md border border-secondary bg-white text-[13px] text-xs text-primary dark:bg-contrast;
 }
 
 pre [data-line] {
     @apply px-4;
 }
 
+
 code {
-    @apply !text-xs md:text-base !leading-loose;
+    @apply !text-xs !leading-loose;
+}
+
+.prose p code {
+    @apply whitespace-pre-line rounded border border-primary bg-primary text-sm px-1 font-normal text-primary;
+}
+
+.prose
+p
+:where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::before,
+.prose
+p
+:where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::after {
+    content: "";
 }
 
 pre > code {
@@ -178,6 +200,10 @@ code[data-theme*=" "] span {
 
 code[data-line-numbers] {
     counter-reset: line;
+}
+
+prose caption {
+    @apply text-tertiary bg-primary text-sm;
 }
 
 [data-highlighted-line] {
