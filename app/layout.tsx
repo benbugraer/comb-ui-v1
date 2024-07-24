@@ -6,7 +6,6 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Provider from "./provider";
-import { ThemeProvider } from "@/components/ThemeProvider";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -29,13 +28,11 @@ export default function RootLayout({
           urbanist.className)
         }
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navigation />
           <div className="mx-auto px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20">
             <Provider>{children}</Provider>
           </div>
           <SpeedInsights />
-        </ThemeProvider>
       </body>
     </html>
   );

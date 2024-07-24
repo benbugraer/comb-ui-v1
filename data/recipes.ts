@@ -31,8 +31,7 @@ export async function markdownToHTML(markdown: string) {
           feedbackDuration: 1500,
         }),
       ],
-      theme: "one-dark-pro",
-      keepBackground: false,
+      theme: "one-light",
       filterMetaString: (string) => string.replace(/filename="[^"]*"/, ""),
     })
     .use(rehypeStringify)
