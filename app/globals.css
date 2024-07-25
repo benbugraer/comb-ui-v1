@@ -146,6 +146,7 @@ input:-webkit-autofill:focus {
     @apply mx-auto mb-8 w-max py-1 px-1.5 border border-primary rounded text-tertiary bg-primary text-center text-sm;
 }
 
+
 .prose h3 {
     @apply mb-2 mt-[48px] text-base;
 }
@@ -192,6 +193,10 @@ pre > code {
     counter-reset: line;
 }
 
+.code-line.inserted {
+    background-color: rgba(16, 185, 129, 0.2); /* Set inserted line (+) color */
+}
+
 code[data-theme*=" "],
 code[data-theme*=" "] span {
     color: var(--shiki-light);
@@ -202,9 +207,6 @@ code[data-line-numbers] {
     counter-reset: line;
 }
 
-prose caption {
-    @apply text-tertiary bg-primary text-sm;
-}
 
 [data-highlighted-line] {
     background-color: var(--blue-3);
@@ -218,10 +220,7 @@ code[data-line-numbers] > [data-line]::before {
     @apply inline-block w-4 mr-4 text-right text-gray-500;
 }
 
-code {
-    counter-reset: line;
-    min-width: 100%;
-}
+
 
 code > [data-line]::before {
     counter-increment: line;

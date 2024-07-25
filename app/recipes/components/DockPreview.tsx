@@ -1,7 +1,9 @@
+"use client"
+
 import { SiReact, SiNextdotjs, SiTailwindcss, SiGithub } from "react-icons/si";
 import { Dock, DockIcon } from "@/components/ui/dock";
 
-export default function DockPreview() {
+const DockPreview = () => {
   const dockItems = [
     { url: "https://reactjs.org/", icon: SiReact },
     { url: "https://nextjs.org/", icon: SiNextdotjs },
@@ -10,14 +12,16 @@ export default function DockPreview() {
   ];
 
   return (
-    <div className="flex items-center justify-center mx-auto gap-4 mt-64">
-      {dockItems.map(({ url, icon: Icon }) => (
-        <Dock key={url}>
-          <DockIcon>
-            <Icon className="w-5 h-5" />
-          </DockIcon>
-        </Dock>
-      ))}
-    </div>
+      <div className="flex items-center justify-center mx-auto gap-4 mt-64">
+        {dockItems.map(({ url, icon: Icon }) => (
+            <Dock key={url}>
+              <DockIcon>
+                <Icon className="w-5 h-5" />
+              </DockIcon>
+            </Dock>
+        ))}
+      </div>
   );
 }
+
+export default DockPreview;
