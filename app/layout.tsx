@@ -28,11 +28,11 @@ export default function RootLayout({
           urbanist.className)
         }
       >
-          <Navigation />
-          <div className="mx-auto px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20">
-            <Provider>{children}</Provider>
-          </div>
-          <SpeedInsights />
+        <Navigation />
+        <div className="mx-auto px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20">
+          <Provider>{children}</Provider>
+        </div>
+        <SpeedInsights />
       </body>
     </html>
   );

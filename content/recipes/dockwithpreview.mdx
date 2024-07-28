@@ -16,7 +16,7 @@ tags:
 
 <DockPreview />
 
- With This recipe, you can create a dock with a preview for your website. This recipe created with Magic UI + Aceternity UI. You can use this recipe in your project to make your website look better.
+With This recipe, you can create a dock with a preview for your website. This recipe created with Magic UI + Aceternity UI. You can use this recipe in your project to make your website look better.
 
 ## Dependencies
 
@@ -25,20 +25,15 @@ tags:
 - [Framer Motion](https://www.framer.com/motion/)
 - [Radix UI Hover Card](https://www.radix-ui.com/primitives/docs/components/hover-card)
 
-
-<Snippet>Hello World</Snippet>
-
-
 ## Code
+
 You only need to create a new file named `DockWithPreview.tsx` in the `components/ui` folder. Then you can copy and paste the code below into the file you created.
 
 ```tsx caption="components/ui/DockWithPreview.tsx"
 "use client";
 import React, { useRef } from "react";
 import { cva } from "class-variance-authority";
-import {
-  motion, useMotionValue, useSpring, useTransform
-} from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 import Image from "next/image";
 import { encode } from "qss";
@@ -50,24 +45,27 @@ const dockVariants = cva(`
   rounded-full border dark:border-[#707070]
 `);
 
-const Dock = React.forwardRef(({
-  className, children, magnification = 60, distance = 140, ...props
-}, ref) => {
-  const mouseX = useMotionValue(Infinity);
-  return (
-    <motion.div
-      ref={ref}
-      onMouseMove={(e) => mouseX.set(e.pageX)}
-      onMouseLeave={() => mouseX.set(Infinity)}
-      {...props}
-      className={cn(dockVariants(), className)}
-    >
-      {React.Children.map(children, (child) =>
-        React.cloneElement(child, { mouseX, magnification, distance })
-      )}
-    </motion.div>
-  );
-});
+const Dock = React.forwardRef(
+  (
+    { className, children, magnification = 60, distance = 140, ...props },
+    ref
+  ) => {
+    const mouseX = useMotionValue(Infinity);
+    return (
+      <motion.div
+        ref={ref}
+        onMouseMove={(e) => mouseX.set(e.pageX)}
+        onMouseLeave={() => mouseX.set(Infinity)}
+        {...props}
+        className={cn(dockVariants(), className)}
+      >
+        {React.Children.map(children, (child) =>
+          React.cloneElement(child, { mouseX, magnification, distance })
+        )}
+      </motion.div>
+    );
+  }
+);
 
 const DockIcon = ({
   magnification = 60,
@@ -78,10 +76,12 @@ const DockIcon = ({
   ...props
 }) => {
   const ref = useRef(null);
-  const distanceCalc = useTransform(mouseX, (val) =>
-    val -
-    (ref.current?.getBoundingClientRect().x ?? 0) -
-    (ref.current?.getBoundingClientRect().width ?? 0) / 2
+  const distanceCalc = useTransform(
+    mouseX,
+    (val) =>
+      val -
+      (ref.current?.getBoundingClientRect().x ?? 0) -
+      (ref.current?.getBoundingClientRect().width ?? 0) / 2
   );
   const widthSync = useTransform(
     distanceCalc,
@@ -91,7 +91,7 @@ const DockIcon = ({
   const width = useSpring(widthSync, {
     mass: 0.1,
     stiffness: 150,
-    damping: 12
+    damping: 12,
   });
   return (
     <motion.div
@@ -109,8 +109,15 @@ const DockIcon = ({
 };
 
 const LinkPreview = ({
-  children, url, className, width = 200, height = 125,
-  quality = 50, layout = "fixed", isStatic = false, imageSrc = ""
+  children,
+  url,
+  className,
+  width = 200,
+  height = 125,
+  quality = 50,
+  layout = "fixed",
+  isStatic = false,
+  imageSrc = "",
 }) => {
   const src = isStatic
     ? imageSrc
@@ -134,11 +141,7 @@ const LinkPreview = ({
       >
         {children}
       </HoverCardPrimitive.Trigger>
-      <HoverCardPrimitive.Content
-        side="bottom"
-        align="center"
-        sideOffset={10}
-      >
+      <HoverCardPrimitive.Content side="bottom" align="center" sideOffset={10}>
         <Link
           href={url}
           className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"

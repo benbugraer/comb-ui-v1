@@ -42,7 +42,7 @@ export default function Home() {
             y={-1}
             strokeDasharray={"4 2"}
             className={cn(
-              "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]",
+              "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]"
             )}
           />
           <Particles
@@ -61,7 +61,7 @@ export default function Home() {
             <AnimatedGradientText>
               <span
                 className={cn(
-                  `inline dark:text-white font-light bg-gradient-to-r from-[#111] via-[#ccc] to-[#111]  bg-[length:var(--bg-size)_100%]  bg-clip-text text-transparent`,
+                  `inline dark:text-white font-light bg-gradient-to-r from-[#111] via-[#ccc] to-[#111]  bg-[length:var(--bg-size)_100%]  bg-clip-text text-transparent`
                 )}
               >
                 Created By{" "}
