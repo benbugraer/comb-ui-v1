@@ -6,6 +6,7 @@ import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import DockPreview from "../components/DockPreview";
+import { GoArrowLeft } from "react-icons/go";
 
 export default async function Recipe({
   params,
@@ -31,16 +32,6 @@ export default async function Recipe({
 
   return (
     <div className="mx-auto relative max-w-2xl py-[3.25rem] sm:py-[3.1rem] sm:w-1/2 lg:w-3/5 flex-col">
-      {/*<script*/}
-      {/*    type="application/ld+json"*/}
-      {/*    suppressHydrationWarning*/}
-      {/*    dangerouslySetInnerHTML={{*/}
-      {/*        __html: JSON.stringify({*/}
-      {/*            headline: recipe.metadata.title,*/}
-      {/*            description: recipe.metadata.description,*/}
-      {/*        }),*/}
-      {/*    }}*/}
-      {/*/>*/}
       <h1
         className="font-bold tracking-tighter text-4xl inline-block animate-in"
         style={{ "--index": 0 } as CSSProperties}
@@ -60,14 +51,23 @@ export default async function Recipe({
       >
         <MDXWrapper {...recipe.source} components={components} />
       </div>
-      <Link
+      {/* <Link
         href="/recipes"
         className="flex text-link items-center gap-2 mt-12 hover:text-primary duration-300 ease-in-out transition-colors animate-in"
         style={{ "--index": 4 } as CSSProperties}
       >
         <HiArrowLeft />
         <span>Back to recipes</span>
-      </Link>
+      </Link> */}
+
+      <button className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-tertiary shadow-lg font-medium text-link transition-all duration-300 hover:w-32">
+        <div className="inline-flex whitespace-nowrap opacity-0 transition-all duration-200 group-hover:translate-x-3 group-hover:opacity-100">
+          Recipe
+        </div>
+        <div className="absolute left-3.5">
+          <GoArrowLeft className="w-5 h-5 text-center flex items-center justify-center" />
+        </div>
+      </button>
     </div>
   );
 }
