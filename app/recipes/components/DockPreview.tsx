@@ -1,6 +1,6 @@
 "use client";
 
-import { SiReact, SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { SiReact, SiTailwindcss } from "react-icons/si";
 import { FaWandMagic } from "react-icons/fa6";
 import AceternityLogo from "@/public/icon/AceternityLogo";
 

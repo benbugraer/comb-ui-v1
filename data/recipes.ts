@@ -1,10 +1,10 @@
 import fs from "fs";
 import path from "path";
 import rehypePrettyCode from "rehype-pretty-code";
-import rehypeStringify from "rehype-stringify";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import { unified } from "unified";
+// import rehypeStringify from "rehype-stringify";
+// import remarkParse from "remark-parse";
+// import remarkRehype from "remark-rehype";
+// import { unified } from "unified";
 import matter from "gray-matter";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import { transformerNotationDiff } from "@shikijs/transformers";

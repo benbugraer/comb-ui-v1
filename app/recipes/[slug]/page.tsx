@@ -4,9 +4,9 @@ import { getRecipes } from "@/data/recipes";
 import { CSSProperties } from "react";
 import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import DockPreview from "../components/DockPreview";
-import { GoArrowLeft } from "react-icons/go";
+import MDXWrapper from "@/components/MDXWrapper";
 
 export default async function Recipe({
   params,
@@ -15,16 +15,16 @@ export default async function Recipe({
     slug: string;
   };
 }) {
-  let recipe = await getRecipes(params.slug);
+  const recipe = await getRecipes(params.slug);
 
   if (!recipe) {
     notFound();
   }
 
-  const MDXWrapper = dynamic(() => import("../../../components/MDXWrapper"), {
-    ssr: false,
-    loading: () => <p>Loading...</p>,
-  });
+  // const MDXWrapper = dynamic(() => import("../../../components/MDXWrapper"), {
+  //   ssr: false,
+  //   loading: () => <p>Loading...</p>,
+  // });
 
   const components = {
     DockPreview,
@@ -60,14 +60,17 @@ export default async function Recipe({
         <span>Back to recipes</span>
       </Link> */}
 
-      <button className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-tertiary shadow-lg font-medium text-link transition-all duration-300 hover:w-32">
+      <Link
+        href="/recipes"
+        className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-tertiary shadow-lg font-medium text-link transition-all duration-300 hover:w-32"
+      >
         <div className="inline-flex whitespace-nowrap opacity-0 transition-all duration-200 group-hover:translate-x-3 group-hover:opacity-100">
           Recipe
         </div>
         <div className="absolute left-3.5">
-          <GoArrowLeft className="w-5 h-5 text-center flex items-center justify-center" />
+          <HiArrowLeft className="w-5 h-5 text-center flex items-center justify-center" />
         </div>
-      </button>
+      </Link>
     </div>
   );
 }
