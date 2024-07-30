@@ -4,8 +4,6 @@ import { getRecipes } from "@/data/recipes";
 import { CSSProperties } from "react";
 import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
-// import dynamic from "next/dynamic";
-import DockPreview from "../components/DockPreview";
 import MDXWrapper from "@/components/MDXWrapper";
 
 export default async function Recipe({
@@ -26,10 +24,6 @@ export default async function Recipe({
   //   loading: () => <p>Loading...</p>,
   // });
 
-  const components = {
-    DockPreview,
-  };
-
   return (
     <div className="mx-auto relative max-w-2xl py-[3.25rem] sm:py-[3.1rem] sm:w-1/2 lg:w-3/5 flex-col">
       <h1
@@ -49,7 +43,7 @@ export default async function Recipe({
         className="prose animate-in"
         style={{ "--index": 3 } as CSSProperties}
       >
-        <MDXWrapper {...recipe.source} components={components} />
+        <MDXWrapper {...recipe.source}  />
       </div>
       {/* <Link
         href="/recipes"

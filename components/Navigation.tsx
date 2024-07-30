@@ -52,7 +52,9 @@ export default function Navigation() {
           href="/"
           className="relative uppercase font-black mr-8 flex items-center space-x-2"
         >
-          CombUI
+          <span>
+            Comb<span className="text-blue-500">UI</span>
+          </span>
         </Link>
         <nav className="hidden xl:flex items-center space-x-6 text-sm font-medium">
           <ul className="hidden md:flex gap-1 items-center">
