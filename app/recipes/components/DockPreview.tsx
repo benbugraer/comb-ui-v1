@@ -19,15 +19,6 @@ const DockPreview = () => {
   return (
     <div className="not-prose h-[25rem] relative my-12 gap-4 -ml-6 flex w-[calc(100%+48px)] max-w-none select-none items-center justify-center overflow-clip border-secondary bg-secondary p-6 md:-ml-20 md:w-[calc(100%+160px)] md:rounded-lg md:border animate-in">
       <div className="flex items-center justify-center mx-auto gap-4">
-        {/*{dockItems.map(({ url, icon: Icon }) => (*/}
-        {/*  <LinkPreview url={url} key={url}>*/}
-        {/*    <Dock>*/}
-        {/*      <DockIcon>*/}
-        {/*        <Icon className="w-5 h-5" />*/}
-        {/*      </DockIcon>*/}
-        {/*    </Dock>*/}
-        {/*  </LinkPreview>*/}
-        {/*))}*/}
         {dockItems.map(({ url, icon: Icon }) => (
           <DockWithPreview url={url} key={url}>
             <Icon className="w-5 h-5" />

@@ -50,10 +50,10 @@ export default function Navigation() {
       <div className="container flex h-16 items-center">
         <Link
           href="/"
-          className="relative uppercase font-black mr-8 flex items-center space-x-2"
+          className="relative uppercase font-normal mr-8 flex items-center space-x-2"
         >
-          <span>
-            Comb<span className="text-blue-500">UI</span>
+          <span className="text-primary">
+            Comb<span className="text-blue-500 font-black">UI</span>
           </span>
         </Link>
         <nav className="hidden xl:flex items-center space-x-6 text-sm font-medium">

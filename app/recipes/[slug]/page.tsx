@@ -43,7 +43,7 @@ export default async function Recipe({
         className="prose animate-in"
         style={{ "--index": 3 } as CSSProperties}
       >
-        <MDXWrapper {...recipe.source}  />
+        <MDXWrapper {...recipe.source} />
       </div>
       {/* <Link
         href="/recipes"

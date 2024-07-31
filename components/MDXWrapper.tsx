@@ -1,15 +1,13 @@
-'use client';
+"use client";
 
-import {MDXRemote, MDXRemoteProps} from 'next-mdx-remote';
+import { MDXRemote, MDXRemoteProps } from "next-mdx-remote";
 import DockPreview from "../app/recipes/components/DockPreview";
 
-export default function MDXWrapper({...props}: MDXRemoteProps) {
 
+export default function MDXWrapper({ ...props }: MDXRemoteProps) {
+  const components = {
+    DockPreview,
+  };
 
-    const components = {
-        DockPreview,
-    };
-
-
-    return <MDXRemote {...props} components={components}/>;
+  return <MDXRemote {...props} components={components} />;
 }
