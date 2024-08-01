@@ -44,16 +44,16 @@ export default function Navigation() {
 
   return (
     <header
-      className="bg-white dark:bg-contrast text-primary bg-opacity-30  top-0 sticky z-40 w-full backdrop-blur-xl animate-in"
+      className="bg-white text-primary bg-opacity-30  top-0 sticky z-40 w-full backdrop-blur-xl animate-in"
       style={{ "--index": 0 } as CSSProperties}
     >
       <div className="container flex h-16 items-center">
         <Link
           href="/"
-          className="relative uppercase font-normal mr-8 flex items-center space-x-2"
+          className="relative uppercase text-lg font-normal tracking-tighter mr-8 flex items-center space-x-2"
         >
           <span className="text-primary">
-            Comb<span className="text-blue-500 font-black">UI</span>
+            Comb<span className="font-black">UI</span>
           </span>
         </Link>
         <nav className="hidden xl:flex items-center space-x-6 text-sm font-medium">

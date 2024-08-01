@@ -6,6 +6,18 @@ import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
 import MDXWrapper from "@/components/MDXWrapper";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: {
+    slug: string;
+  };
+}): Promise<Metadata | undefined> {
+  let recipe = await getRecipes(params.slug);
+
+  return recipe.metadata;
+}
+
 export default async function Recipe({
   params,
 }: {
@@ -18,11 +30,6 @@ export default async function Recipe({
   if (!recipe) {
     notFound();
   }
-
-  // const MDXWrapper = dynamic(() => import("../../../components/MDXWrapper"), {
-  //   ssr: false,
-  //   loading: () => <p>Loading...</p>,
-  // });
 
   return (
     <div className="mx-auto relative max-w-2xl py-[3.25rem] sm:py-[3.1rem] sm:w-1/2 lg:w-3/5 flex-col">
@@ -45,15 +52,6 @@ export default async function Recipe({
       >
         <MDXWrapper {...recipe.source} />
       </div>
-      {/* <Link
-        href="/recipes"
-        className="flex text-link items-center gap-2 mt-12 hover:text-primary duration-300 ease-in-out transition-colors animate-in"
-        style={{ "--index": 4 } as CSSProperties}
-      >
-        <HiArrowLeft />
-        <span>Back to recipes</span>
-      </Link> */}
-
       <Link
         href="/recipes"
         className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-tertiary shadow-lg font-medium text-link transition-all duration-300 hover:w-32"

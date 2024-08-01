@@ -10,11 +10,11 @@ import { transformerCopyButton } from "@rehype-pretty/transformers";
 import { transformerNotationDiff } from "@shikijs/transformers";
 import { serialize } from "next-mdx-remote/serialize";
 
-type Metadata = {
-  title: string;
-  description: string;
-  image?: string;
-};
+// type Metadata = {
+//   title: string;
+//   description: string;
+//   image?: string;
+// };
 
 function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
