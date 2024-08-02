@@ -54,7 +54,8 @@ export default async function Recipe({
       </div>
       <Link
         href="/recipes"
-        className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-tertiary shadow-lg font-medium text-link transition-all duration-300 hover:w-32"
+        className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-tertiary shadow-lg font-medium text-link transition-all duration-300 hover:w-32 animate-in"
+        style={{ "--index": 4 } as CSSProperties}
       >
         <div className="inline-flex whitespace-nowrap opacity-0 transition-all duration-200 group-hover:translate-x-3 group-hover:opacity-100">
           Recipe

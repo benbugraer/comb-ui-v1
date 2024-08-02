@@ -33,7 +33,6 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
 
     const renderChildren = () => {
       return React.Children.map(children, (child: any) => {
-        console.log("Passing mouseX to child:", child);
         return React.cloneElement(child, {
           mouseX: mouseX,
           magnification: magnification,
@@ -77,7 +76,6 @@ const DockIcon = ({
   children,
   ...props
 }: DockIconProps) => {
-  console.log("DockIcon received mouseX:", mouseX);
   const ref = useRef<HTMLDivElement>(null);
 
   const distanceCalc = useTransform(mouseX, (val: number) => {
